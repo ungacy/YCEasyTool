@@ -50,13 +50,13 @@ platform :ios do
     end
     commit_podspec_file(version)
     add_git_tag(version)
-    pod_push(
-      path: "./#{lib_name}.podspec",
-      allow_warnings: true,
-      repo: 'SISpecs',
-      use_libraries: true,
-      sources: ['git@git.superid.cn:iOS/SISpecs.git', 'https://github.com/CocoaPods/Specs.git']
-    )
+    # pod_push(
+    #   path: "./#{lib_name}.podspec",
+    #   allow_warnings: true,
+    #   repo: 'SISpecs',
+    #   use_libraries: true,
+    #   sources: ['git@git.superid.cn:iOS/SISpecs.git', 'https://github.com/CocoaPods/Specs.git']
+    # )
     sh 'pod trunk push YCEasyTool.podspec'
   end
   
