@@ -57,7 +57,7 @@ platform :ios do
     #   use_libraries: true,
     #   sources: ['git@git.superid.cn:iOS/SISpecs.git', 'https://github.com/CocoaPods/Specs.git']
     # )
-    sh 'pod trunk push YCEasyTool.podspec'
+    sh 'pod trunk push ../YCEasyTool.podspec'
   end
   
   # You can define as many lanes as you want
