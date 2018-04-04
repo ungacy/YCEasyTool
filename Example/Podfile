@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'YCEasyTool_Example' do
+  pod 'YCEasyTool', :path => '../'
+end

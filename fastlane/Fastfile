@@ -1,0 +1,85 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.101.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+  end
+  
+  def commit_podspec_file(version)
+      lib_name=Dir.pwd.sub('/fastlane','').split('/').last
+      sh "git add ../"
+      sh "git commit -m \'version bump to #{version}\'"
+      sh "git push origin head:master"
+    end
+    
+  def add_git_tag(tag)
+      sh "git tag #{tag.shellescape}"
+      sh "git push origin #{tag.shellescape}"
+    end
+    
+  desc "Set the current pod to version you set"
+  desc "It will auto increase version if no version is set"
+  lane :version do |options|
+    lib_name=Dir.pwd.sub('/fastlane','').split('/').last
+    custom_version=options[:version]
+    version=custom_version
+    if custom_version
+      version_bump_podspec(
+        path: "./#{lib_name}.podspec",
+        version_number: custom_version
+      )
+    else
+      version = version_bump_podspec(
+        path: "./#{lib_name}.podspec"
+      )
+    end
+    commit_podspec_file(version)
+    add_git_tag(version)
+    pod_push(
+      path: "./#{lib_name}.podspec",
+      allow_warnings: true,
+      repo: 'SISpecs',
+      use_libraries: true,
+      sources: ['git@git.superid.cn:iOS/SISpecs.git', 'https://github.com/CocoaPods/Specs.git']
+    )
+  end
+  
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer

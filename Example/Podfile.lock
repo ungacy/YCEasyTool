@@ -1,0 +1,41 @@
+PODS:
+  - YCEasyTool (0.2):
+    - YCEasyTool/Forever (= 0.2)
+    - YCEasyTool/Polling (= 0.2)
+    - YCEasyTool/Property (= 0.2)
+    - YCEasyTool/Tools (= 0.2)
+    - YCEasyTool/UI (= 0.2)
+  - YCEasyTool/Forever (0.2):
+    - YCEasyTool/Property
+  - YCEasyTool/Polling (0.2)
+  - YCEasyTool/Property (0.2)
+  - YCEasyTool/Tools (0.2)
+  - YCEasyTool/UI (0.2):
+    - YCEasyTool/UI/CollectionView (= 0.2)
+    - YCEasyTool/UI/Grid (= 0.2)
+    - YCEasyTool/UI/PopMenu (= 0.2)
+    - YCEasyTool/UI/Segment (= 0.2)
+    - YCEasyTool/UI/TabBarController (= 0.2)
+    - YCEasyTool/UI/TreeMenu (= 0.2)
+  - YCEasyTool/UI/CollectionView (0.2)
+  - YCEasyTool/UI/Grid (0.2):
+    - YCEasyTool/Tools
+    - YCEasyTool/UI/CollectionView
+  - YCEasyTool/UI/PopMenu (0.2)
+  - YCEasyTool/UI/Segment (0.2)
+  - YCEasyTool/UI/TabBarController (0.2)
+  - YCEasyTool/UI/TreeMenu (0.2)
+
+DEPENDENCIES:
+  - YCEasyTool (from `../`)
+
+EXTERNAL SOURCES:
+  YCEasyTool:
+    :path: ../
+
+SPEC CHECKSUMS:
+  YCEasyTool: b7a370591ed44b1be4fa575b61fae8ae2deefa48
+
+PODFILE CHECKSUM: 39f58180880e97a194fdb7c4658255fd08dd5b16
+
+COCOAPODS: 1.4.0

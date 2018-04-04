@@ -1,0 +1,6 @@
+framework module YCEasyTool {
+  umbrella header "YCEasyTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

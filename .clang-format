@@ -1,0 +1,19 @@
+BasedOnStyle: LLVM
+# AlignConsecutiveAssignments: true
+# AlignConsecutiveDeclarations: true
+# AlignTrailingComments: true
+BreakBeforeBraces: Attach
+ColumnLimit: 0
+IndentWidth: 4
+KeepEmptyLinesAtTheStartOfBlocks: false
+ObjCSpaceAfterProperty: true
+ObjCSpaceBeforeProtocolList: true
+ObjCBlockIndentWidth: 4
+SpacesInContainerLiterals: false
+PointerBindsToType: false
+SpacesBeforeTrailingComments: 1
+IndentCaseLabels: true
+AllowShortIfStatementsOnASingleLine: false
+BinPackParameters: true
+TabWidth: 4
+UseTab: Never

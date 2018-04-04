@@ -1,0 +1,817 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0228843B4B21970C57AF7735A676EA48 /* YCPopMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D3A5872D713CB378F8B7881E12D910B /* YCPopMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03C6C5806C668112A0A6D76B4252DEA4 /* YCTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDD1759C7BAB29552909657DA6E0B88 /* YCTabBarItem.m */; };
+		1601D6AE58B4661E567DEE14875B6BE3 /* YCPollingEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = AE309A456FF5EED76EBE3A4F55CD201B /* YCPollingEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EBB3F72B1FF137444A6468DF41156C7 /* YCGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A2923D9675E28DFEA0D94ACA2BE52D /* YCGridView.m */; };
+		200F8F558C58E63A8902A70218E4674B /* YCTabBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DAC2270B2323C560018345CA1868B1F /* YCTabBarItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2551EAB1DED5DD1241706AA59F39A7EB /* NSObject+YCForeverMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2B76CB72C4C7E2F9C8FBE137BD53F0 /* NSObject+YCForeverMaker.m */; };
+		26614F7DA2D03537B00E53CCE063EF5D /* YCProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1787F2FDFA5AE900B61F7E58C94288 /* YCProperty.m */; };
+		2E5B773EA64FD48D6C02C0D4E7848682 /* YCSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F11AA996B9FF2DE45FAEC1F4BD1581 /* YCSegmentedControl.m */; };
+		345EB094A431632AAAE33D9DEEFA35C8 /* YCTreeMenuProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E9C0FDAF188371735C7F8340005B22F /* YCTreeMenuProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F0E93ED636B6AFC53145B6D1724F0D4 /* YCForeverSqlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F646211534E86FCCB31DA5187B7AB76B /* YCForeverSqlHelper.m */; };
+		4E49C868493B302DB5386CC6973E3A66 /* YCPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA00E9B93B19BBDD361F9A832CEBB5A /* YCPopMenu.m */; };
+		548E762A0EC47F0330994EC8278710AC /* YCProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D75208526840548034BC774F033F4D5C /* YCProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57BAFA3104CCC3620DE7082283EB7674 /* YCCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0689A1C87DE331292D6095F68C66F74B /* YCCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58EFF9E980C1CECF09451221A1E8AB47 /* YCMemeryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B19206347521223C25EB63063410CB /* YCMemeryCache.m */; };
+		5BF52B0C1B7AFC3EC7B203B80CDD5AA9 /* YCCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E79702CEF0B8BD97542BE3D9DF6BA88 /* YCCollectionView.m */; };
+		5FE8D74E0642BDE1C4D4C30FCED96CBC /* YCForever.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D242FD66A20C5C3179EB44AEB3EE61 /* YCForever.m */; };
+		613D7207A77274B18C18B23F47F29CB3 /* YCEasyTool-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E306016A6022D974E92AC8CC3A29E6E /* YCEasyTool-dummy.m */; };
+		61C2FD4DFCFE605124F5E1F386C67A56 /* YCTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = FACB41270777BD9EFD3AFFDB75A6766F /* YCTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7049917FEF84F9DF329C5E93145E67EE /* YCCollectionViewDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 17A0F436E75B7D4FD6B261A47263DC43 /* YCCollectionViewDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		713C67359AE4C81C1C3D4C498E5E5D85 /* NSObject+YCForeverMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 8097AE99478ABEEE157A316E1452792C /* NSObject+YCForeverMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		755338B33FC3EB7D7FE739140AAC2FB9 /* NSArray+YCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = CB33F167FA9671FB91E1A53437411741 /* NSArray+YCTools.m */; };
+		8083ED9F6B9454F46467B452BC97FF83 /* YCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A8368771FFDCDA7D395B49022C6934F6 /* YCTabBar.m */; };
+		853D722C0BEC12D4422BC9A6F59F57A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		8829465F714C8A85BD4508B99B27F35C /* YCMemeryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 69CD85B5E053FE31E7D70AD1405D608F /* YCMemeryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C3D09D9374BA964D7288AE786365D43 /* YCTreeMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E258C77D517C303C238E248296C39BB /* YCTreeMenuView.m */; };
+		9300B1531AADA7A8F55A15B7BB665B24 /* YCGridView.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C9EAD49E2543CB38B9927AB165C551 /* YCGridView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B5A281BD280A4817C9BF258E84AEBBC /* YCGridViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 582A268D0CEF66E417FABC9C4A38412B /* YCGridViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C1765C424C7120C84BABC84D545ED22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		9CFE8DD2ECB488AF280B2070797EB824 /* YCTreeMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = F07CD5D70C5EF76E6C35B1BFB347D72F /* YCTreeMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D587941EE8E2C9C922D14DC81F48855 /* YCTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 56DF09BFFDF57D1DE921A3604E6385D1 /* YCTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E3A7A33C2EBBC84CC485D866F2B2BD3 /* YCSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = DB54A61145C2137841668A7C66896E38 /* YCSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A18B89F98B751A25DCA95DFA380311EA /* YCGridViewDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = C02BF80475C58A02141F1AFDCFA4430E /* YCGridViewDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A29A97B3A326B210CECB99AC36415C9D /* Pods-YCEasyTool_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D9700D6302E8C10769E4B19DB2C1AAD5 /* Pods-YCEasyTool_Example-dummy.m */; };
+		A300F63D25AFBDD13C68265107D949E8 /* YCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD98DEB12E4D68803A3FB091BE91C72 /* YCTabBarController.m */; };
+		A3DE7A9A0670ECC6105ED715502C51B4 /* Pods-YCEasyTool_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A17412316608D632F1BE15C5C868D20 /* Pods-YCEasyTool_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABB4B825E2BD232ED39430852787938F /* YCPollingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08A41F955F704AF496986A61055924 /* YCPollingEntity.m */; };
+		AD18C85CC1ACB4C9C13C1B888AB20268 /* YCForeverDAO.h in Headers */ = {isa = PBXBuildFile; fileRef = BF3D827C6CBBD2850B0C5E25B99BB522 /* YCForeverDAO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7A8B578D692376A6BEEC0DB63B5B38A /* YCForeverProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 0637E7D65E30789F9C4140DF9FBB48F1 /* YCForeverProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA66323CCFCE3A1EE43941E6098207DF /* YCForeverDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDB8150474CCDE8B7D413B9DBB5F23A /* YCForeverDAO.m */; };
+		CD2B5B487B93D0BFAE1191DE47AF42A2 /* YCEasyTool-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0425CDDEE8A343046A3C335CF1B6850D /* YCEasyTool-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3B739B0726BFD447DC861B8E3C2A0C5 /* YCSegmentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = D4479D40779D5B653B39D4022CE9195C /* YCSegmentItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC1C1C5A572833BFB8CB970622A916FA /* NSArray+YCTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4A65E070F0A9BCBF22653CE61A2C0E /* NSArray+YCTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1878BAB36F2B1D179A1D528D464DFB2 /* YCForever.h in Headers */ = {isa = PBXBuildFile; fileRef = DACA57F337A7F83E3563AAF81FE2AC6F /* YCForever.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF16DCFDD2C4934EF4C197CF812DB8D7 /* YCGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D2A2800D25327075E093F9B5D1FF41 /* YCGridViewCell.m */; };
+		F22E5502DB3FDB519A28181F6401BD01 /* YCSegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BC4EB160042F01ABB7A3C10B886B /* YCSegmentItem.m */; };
+		F57A585841C33839A1CD4A5494D7133F /* YCForeverSqlHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 666D666B1D6F8701A8B333C154BCB3B3 /* YCForeverSqlHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		903C4139102656AED9C55B3776856DE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F36C227A9DE1BE75027668197908C07;
+			remoteInfo = YCEasyTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03F4D3146936377BB11A0F961FEFE846 /* Pods-YCEasyTool_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YCEasyTool_Example-frameworks.sh"; sourceTree = "<group>"; };
+		0425CDDEE8A343046A3C335CF1B6850D /* YCEasyTool-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YCEasyTool-umbrella.h"; sourceTree = "<group>"; };
+		0637E7D65E30789F9C4140DF9FBB48F1 /* YCForeverProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCForeverProtocol.h; path = YCEasyTool/Classes/Forever/YCForeverProtocol.h; sourceTree = "<group>"; };
+		0689A1C87DE331292D6095F68C66F74B /* YCCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCCollectionView.h; path = YCEasyTool/Classes/UI/CollectionView/YCCollectionView.h; sourceTree = "<group>"; };
+		086A1659BC8DAB0869AE30E1671FE0A7 /* YCEasyTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YCEasyTool.framework; path = YCEasyTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BDD1759C7BAB29552909657DA6E0B88 /* YCTabBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCTabBarItem.m; path = YCEasyTool/Classes/UI/TabBarController/YCTabBarItem.m; sourceTree = "<group>"; };
+		0D3A5872D713CB378F8B7881E12D910B /* YCPopMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCPopMenu.h; path = YCEasyTool/Classes/UI/PopMenu/YCPopMenu.h; sourceTree = "<group>"; };
+		0E258C77D517C303C238E248296C39BB /* YCTreeMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCTreeMenuView.m; path = YCEasyTool/Classes/UI/TreeMenu/YCTreeMenuView.m; sourceTree = "<group>"; };
+		11B19206347521223C25EB63063410CB /* YCMemeryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCMemeryCache.m; path = YCEasyTool/Classes/Property/YCMemeryCache.m; sourceTree = "<group>"; };
+		1285E0164D77294E54EAF10547D76E7E /* Pods-YCEasyTool_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YCEasyTool_Example.release.xcconfig"; sourceTree = "<group>"; };
+		17A0F436E75B7D4FD6B261A47263DC43 /* YCCollectionViewDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCCollectionViewDefine.h; path = YCEasyTool/Classes/UI/CollectionView/YCCollectionViewDefine.h; sourceTree = "<group>"; };
+		19984C1F98CE0AD8E613680744FA0293 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		22D242FD66A20C5C3179EB44AEB3EE61 /* YCForever.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCForever.m; path = YCEasyTool/Classes/Forever/YCForever.m; sourceTree = "<group>"; };
+		38EABFA0C8745C42BEDCE38698A038E7 /* YCEasyTool-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YCEasyTool-prefix.pch"; sourceTree = "<group>"; };
+		3E306016A6022D974E92AC8CC3A29E6E /* YCEasyTool-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YCEasyTool-dummy.m"; sourceTree = "<group>"; };
+		49C9EAD49E2543CB38B9927AB165C551 /* YCGridView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCGridView.h; path = YCEasyTool/Classes/UI/Grid/YCGridView.h; sourceTree = "<group>"; };
+		52A2923D9675E28DFEA0D94ACA2BE52D /* YCGridView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCGridView.m; path = YCEasyTool/Classes/UI/Grid/YCGridView.m; sourceTree = "<group>"; };
+		52AD2364A1F46E404CFF069EB64805BB /* Pods_YCEasyTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YCEasyTool_Example.framework; path = "Pods-YCEasyTool_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56DF09BFFDF57D1DE921A3604E6385D1 /* YCTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCTabBar.h; path = YCEasyTool/Classes/UI/TabBarController/YCTabBar.h; sourceTree = "<group>"; };
+		582A268D0CEF66E417FABC9C4A38412B /* YCGridViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCGridViewCell.h; path = YCEasyTool/Classes/UI/Grid/YCGridViewCell.h; sourceTree = "<group>"; };
+		5F22BC4EB160042F01ABB7A3C10B886B /* YCSegmentItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCSegmentItem.m; path = YCEasyTool/Classes/UI/Segment/YCSegmentItem.m; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		666D666B1D6F8701A8B333C154BCB3B3 /* YCForeverSqlHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCForeverSqlHelper.h; path = YCEasyTool/Classes/Forever/YCForeverSqlHelper.h; sourceTree = "<group>"; };
+		69CD85B5E053FE31E7D70AD1405D608F /* YCMemeryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCMemeryCache.h; path = YCEasyTool/Classes/Property/YCMemeryCache.h; sourceTree = "<group>"; };
+		6BCCD89E4D2EA0795CC50C5E0C0922E8 /* YCEasyTool.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YCEasyTool.modulemap; sourceTree = "<group>"; };
+		6E79702CEF0B8BD97542BE3D9DF6BA88 /* YCCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCCollectionView.m; path = YCEasyTool/Classes/UI/CollectionView/YCCollectionView.m; sourceTree = "<group>"; };
+		7A17412316608D632F1BE15C5C868D20 /* Pods-YCEasyTool_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YCEasyTool_Example-umbrella.h"; sourceTree = "<group>"; };
+		7D37943A42CEAA8205B74ABD936CEFE7 /* YCEasyTool.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YCEasyTool.xcconfig; sourceTree = "<group>"; };
+		8097AE99478ABEEE157A316E1452792C /* NSObject+YCForeverMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YCForeverMaker.h"; path = "YCEasyTool/Classes/Forever/NSObject+YCForeverMaker.h"; sourceTree = "<group>"; };
+		8A4BD49E472997F4B452AFCBE7919EBA /* Pods-YCEasyTool_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YCEasyTool_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A4A65E070F0A9BCBF22653CE61A2C0E /* NSArray+YCTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+YCTools.h"; path = "YCEasyTool/Classes/Tools/NSArray+YCTools.h"; sourceTree = "<group>"; };
+		9C08A41F955F704AF496986A61055924 /* YCPollingEntity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCPollingEntity.m; path = YCEasyTool/Classes/PollingEntity/YCPollingEntity.m; sourceTree = "<group>"; };
+		9DAC2270B2323C560018345CA1868B1F /* YCTabBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCTabBarItem.h; path = YCEasyTool/Classes/UI/TabBarController/YCTabBarItem.h; sourceTree = "<group>"; };
+		9E9C0FDAF188371735C7F8340005B22F /* YCTreeMenuProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCTreeMenuProtocol.h; path = YCEasyTool/Classes/UI/TreeMenu/YCTreeMenuProtocol.h; sourceTree = "<group>"; };
+		9F1787F2FDFA5AE900B61F7E58C94288 /* YCProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCProperty.m; path = YCEasyTool/Classes/Property/YCProperty.m; sourceTree = "<group>"; };
+		A8368771FFDCDA7D395B49022C6934F6 /* YCTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCTabBar.m; path = YCEasyTool/Classes/UI/TabBarController/YCTabBar.m; sourceTree = "<group>"; };
+		AC2B76CB72C4C7E2F9C8FBE137BD53F0 /* NSObject+YCForeverMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YCForeverMaker.m"; path = "YCEasyTool/Classes/Forever/NSObject+YCForeverMaker.m"; sourceTree = "<group>"; };
+		AD3340247FBEDE5CF39845AB26B7D705 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		AE309A456FF5EED76EBE3A4F55CD201B /* YCPollingEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCPollingEntity.h; path = YCEasyTool/Classes/PollingEntity/YCPollingEntity.h; sourceTree = "<group>"; };
+		BAC3E27615A5A6DB3C2E42D3B29C021A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF3D827C6CBBD2850B0C5E25B99BB522 /* YCForeverDAO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCForeverDAO.h; path = YCEasyTool/Classes/Forever/YCForeverDAO.h; sourceTree = "<group>"; };
+		C02BF80475C58A02141F1AFDCFA4430E /* YCGridViewDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCGridViewDefine.h; path = YCEasyTool/Classes/UI/Grid/YCGridViewDefine.h; sourceTree = "<group>"; };
+		C355645186D0154962DF6018E97C42CD /* Pods-YCEasyTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YCEasyTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C9D2A2800D25327075E093F9B5D1FF41 /* YCGridViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCGridViewCell.m; path = YCEasyTool/Classes/UI/Grid/YCGridViewCell.m; sourceTree = "<group>"; };
+		CB33F167FA9671FB91E1A53437411741 /* NSArray+YCTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+YCTools.m"; path = "YCEasyTool/Classes/Tools/NSArray+YCTools.m"; sourceTree = "<group>"; };
+		CFDB8150474CCDE8B7D413B9DBB5F23A /* YCForeverDAO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCForeverDAO.m; path = YCEasyTool/Classes/Forever/YCForeverDAO.m; sourceTree = "<group>"; };
+		D3D1075580B4D2210C72607E7E55DB7E /* Pods-YCEasyTool_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YCEasyTool_Example-resources.sh"; sourceTree = "<group>"; };
+		D4479D40779D5B653B39D4022CE9195C /* YCSegmentItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCSegmentItem.h; path = YCEasyTool/Classes/UI/Segment/YCSegmentItem.h; sourceTree = "<group>"; };
+		D75208526840548034BC774F033F4D5C /* YCProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCProperty.h; path = YCEasyTool/Classes/Property/YCProperty.h; sourceTree = "<group>"; };
+		D9700D6302E8C10769E4B19DB2C1AAD5 /* Pods-YCEasyTool_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YCEasyTool_Example-dummy.m"; sourceTree = "<group>"; };
+		DACA57F337A7F83E3563AAF81FE2AC6F /* YCForever.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCForever.h; path = YCEasyTool/Classes/Forever/YCForever.h; sourceTree = "<group>"; };
+		DB54A61145C2137841668A7C66896E38 /* YCSegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCSegmentedControl.h; path = YCEasyTool/Classes/UI/Segment/YCSegmentedControl.h; sourceTree = "<group>"; };
+		DBD98DEB12E4D68803A3FB091BE91C72 /* YCTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCTabBarController.m; path = YCEasyTool/Classes/UI/TabBarController/YCTabBarController.m; sourceTree = "<group>"; };
+		DEA00E9B93B19BBDD361F9A832CEBB5A /* YCPopMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCPopMenu.m; path = YCEasyTool/Classes/UI/PopMenu/YCPopMenu.m; sourceTree = "<group>"; };
+		EC7BFA6900D5CFBDA7399D91100A5998 /* Pods-YCEasyTool_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YCEasyTool_Example.modulemap"; sourceTree = "<group>"; };
+		EF683FF0C2475B0D5195001016DC0263 /* YCEasyTool.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = YCEasyTool.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F04F65837CB97E150CC97CA74E4D7E14 /* Pods-YCEasyTool_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YCEasyTool_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F07CD5D70C5EF76E6C35B1BFB347D72F /* YCTreeMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCTreeMenuView.h; path = YCEasyTool/Classes/UI/TreeMenu/YCTreeMenuView.h; sourceTree = "<group>"; };
+		F4F11AA996B9FF2DE45FAEC1F4BD1581 /* YCSegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCSegmentedControl.m; path = YCEasyTool/Classes/UI/Segment/YCSegmentedControl.m; sourceTree = "<group>"; };
+		F646211534E86FCCB31DA5187B7AB76B /* YCForeverSqlHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YCForeverSqlHelper.m; path = YCEasyTool/Classes/Forever/YCForeverSqlHelper.m; sourceTree = "<group>"; };
+		FA88C138D32B503936E944FA79743ED6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACB41270777BD9EFD3AFFDB75A6766F /* YCTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YCTabBarController.h; path = YCEasyTool/Classes/UI/TabBarController/YCTabBarController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFB33B6DA718094046A38A8BFF43A683 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1765C424C7120C84BABC84D545ED22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2F4100B9AAC790015F3A76E99477C7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				853D722C0BEC12D4422BC9A6F59F57A5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22AF4B27154CABDBE2DEF7F91CAAAD74 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA88C138D32B503936E944FA79743ED6 /* Info.plist */,
+				6BCCD89E4D2EA0795CC50C5E0C0922E8 /* YCEasyTool.modulemap */,
+				7D37943A42CEAA8205B74ABD936CEFE7 /* YCEasyTool.xcconfig */,
+				3E306016A6022D974E92AC8CC3A29E6E /* YCEasyTool-dummy.m */,
+				38EABFA0C8745C42BEDCE38698A038E7 /* YCEasyTool-prefix.pch */,
+				0425CDDEE8A343046A3C335CF1B6850D /* YCEasyTool-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/YCEasyTool";
+			sourceTree = "<group>";
+		};
+		28AF93B88F18581F04F1348FBD560B5C /* Polling */ = {
+			isa = PBXGroup;
+			children = (
+				AE309A456FF5EED76EBE3A4F55CD201B /* YCPollingEntity.h */,
+				9C08A41F955F704AF496986A61055924 /* YCPollingEntity.m */,
+			);
+			name = Polling;
+			sourceTree = "<group>";
+		};
+		323F3E28A42DC7293576E1365893EFCF /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				AD3340247FBEDE5CF39845AB26B7D705 /* LICENSE */,
+				19984C1F98CE0AD8E613680744FA0293 /* README.md */,
+				EF683FF0C2475B0D5195001016DC0263 /* YCEasyTool.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		367532A45000E72AD843FFF5184C879E /* Forever */ = {
+			isa = PBXGroup;
+			children = (
+				8097AE99478ABEEE157A316E1452792C /* NSObject+YCForeverMaker.h */,
+				AC2B76CB72C4C7E2F9C8FBE137BD53F0 /* NSObject+YCForeverMaker.m */,
+				DACA57F337A7F83E3563AAF81FE2AC6F /* YCForever.h */,
+				22D242FD66A20C5C3179EB44AEB3EE61 /* YCForever.m */,
+				BF3D827C6CBBD2850B0C5E25B99BB522 /* YCForeverDAO.h */,
+				CFDB8150474CCDE8B7D413B9DBB5F23A /* YCForeverDAO.m */,
+				0637E7D65E30789F9C4140DF9FBB48F1 /* YCForeverProtocol.h */,
+				666D666B1D6F8701A8B333C154BCB3B3 /* YCForeverSqlHelper.h */,
+				F646211534E86FCCB31DA5187B7AB76B /* YCForeverSqlHelper.m */,
+			);
+			name = Forever;
+			sourceTree = "<group>";
+		};
+		48DE9EA7E271161D1A25EDE9EEBFCD63 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				49C9EAD49E2543CB38B9927AB165C551 /* YCGridView.h */,
+				52A2923D9675E28DFEA0D94ACA2BE52D /* YCGridView.m */,
+				582A268D0CEF66E417FABC9C4A38412B /* YCGridViewCell.h */,
+				C9D2A2800D25327075E093F9B5D1FF41 /* YCGridViewCell.m */,
+				C02BF80475C58A02141F1AFDCFA4430E /* YCGridViewDefine.h */,
+			);
+			name = Grid;
+			sourceTree = "<group>";
+		};
+		5A64F9A36A5837962B7C6D5DF09D05B5 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0689A1C87DE331292D6095F68C66F74B /* YCCollectionView.h */,
+				6E79702CEF0B8BD97542BE3D9DF6BA88 /* YCCollectionView.m */,
+				17A0F436E75B7D4FD6B261A47263DC43 /* YCCollectionViewDefine.h */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		64E1D2C266EDA3F5F476DF28587A5CB6 /* Segment */ = {
+			isa = PBXGroup;
+			children = (
+				DB54A61145C2137841668A7C66896E38 /* YCSegmentedControl.h */,
+				F4F11AA996B9FF2DE45FAEC1F4BD1581 /* YCSegmentedControl.m */,
+				D4479D40779D5B653B39D4022CE9195C /* YCSegmentItem.h */,
+				5F22BC4EB160042F01ABB7A3C10B886B /* YCSegmentItem.m */,
+			);
+			name = Segment;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E3D95C9656BB48ACDFC370FEFB08CC57 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				AC6C01A7CC7F63E7A63C581262341F92 /* Products */,
+				B30225F29A187581693D6A22FEB59E17 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8978743A230BD283E3E34B4FA52C04D6 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				56DF09BFFDF57D1DE921A3604E6385D1 /* YCTabBar.h */,
+				A8368771FFDCDA7D395B49022C6934F6 /* YCTabBar.m */,
+				FACB41270777BD9EFD3AFFDB75A6766F /* YCTabBarController.h */,
+				DBD98DEB12E4D68803A3FB091BE91C72 /* YCTabBarController.m */,
+				9DAC2270B2323C560018345CA1868B1F /* YCTabBarItem.h */,
+				0BDD1759C7BAB29552909657DA6E0B88 /* YCTabBarItem.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		9F620892647CF97AE97C44266AFBC178 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5A64F9A36A5837962B7C6D5DF09D05B5 /* CollectionView */,
+				48DE9EA7E271161D1A25EDE9EEBFCD63 /* Grid */,
+				A32B475CC18A7A47CA1D220C03DED975 /* PopMenu */,
+				64E1D2C266EDA3F5F476DF28587A5CB6 /* Segment */,
+				8978743A230BD283E3E34B4FA52C04D6 /* TabBarController */,
+				F755F4FFF46F0C8E22A8B9D414AA8628 /* TreeMenu */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A32B475CC18A7A47CA1D220C03DED975 /* PopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0D3A5872D713CB378F8B7881E12D910B /* YCPopMenu.h */,
+				DEA00E9B93B19BBDD361F9A832CEBB5A /* YCPopMenu.m */,
+			);
+			name = PopMenu;
+			sourceTree = "<group>";
+		};
+		AC6C01A7CC7F63E7A63C581262341F92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52AD2364A1F46E404CFF069EB64805BB /* Pods_YCEasyTool_Example.framework */,
+				086A1659BC8DAB0869AE30E1671FE0A7 /* YCEasyTool.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B30225F29A187581693D6A22FEB59E17 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8405DB8FA984DDEA3B3FC4958E920EF /* Pods-YCEasyTool_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD2CA06BD318543F202B739B8C4E6DD1 /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				69CD85B5E053FE31E7D70AD1405D608F /* YCMemeryCache.h */,
+				11B19206347521223C25EB63063410CB /* YCMemeryCache.m */,
+				D75208526840548034BC774F033F4D5C /* YCProperty.h */,
+				9F1787F2FDFA5AE900B61F7E58C94288 /* YCProperty.m */,
+			);
+			name = Property;
+			sourceTree = "<group>";
+		};
+		D06F7BD517DC8A3A7584A3BB2A3B3269 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A65E070F0A9BCBF22653CE61A2C0E /* NSArray+YCTools.h */,
+				CB33F167FA9671FB91E1A53437411741 /* NSArray+YCTools.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D8405DB8FA984DDEA3B3FC4958E920EF /* Pods-YCEasyTool_Example */ = {
+			isa = PBXGroup;
+			children = (
+				BAC3E27615A5A6DB3C2E42D3B29C021A /* Info.plist */,
+				EC7BFA6900D5CFBDA7399D91100A5998 /* Pods-YCEasyTool_Example.modulemap */,
+				F04F65837CB97E150CC97CA74E4D7E14 /* Pods-YCEasyTool_Example-acknowledgements.markdown */,
+				8A4BD49E472997F4B452AFCBE7919EBA /* Pods-YCEasyTool_Example-acknowledgements.plist */,
+				D9700D6302E8C10769E4B19DB2C1AAD5 /* Pods-YCEasyTool_Example-dummy.m */,
+				03F4D3146936377BB11A0F961FEFE846 /* Pods-YCEasyTool_Example-frameworks.sh */,
+				D3D1075580B4D2210C72607E7E55DB7E /* Pods-YCEasyTool_Example-resources.sh */,
+				7A17412316608D632F1BE15C5C868D20 /* Pods-YCEasyTool_Example-umbrella.h */,
+				C355645186D0154962DF6018E97C42CD /* Pods-YCEasyTool_Example.debug.xcconfig */,
+				1285E0164D77294E54EAF10547D76E7E /* Pods-YCEasyTool_Example.release.xcconfig */,
+			);
+			name = "Pods-YCEasyTool_Example";
+			path = "Target Support Files/Pods-YCEasyTool_Example";
+			sourceTree = "<group>";
+		};
+		DFD9EE5BC090FAD45EA524C804260604 /* YCEasyTool */ = {
+			isa = PBXGroup;
+			children = (
+				367532A45000E72AD843FFF5184C879E /* Forever */,
+				323F3E28A42DC7293576E1365893EFCF /* Pod */,
+				28AF93B88F18581F04F1348FBD560B5C /* Polling */,
+				BD2CA06BD318543F202B739B8C4E6DD1 /* Property */,
+				22AF4B27154CABDBE2DEF7F91CAAAD74 /* Support Files */,
+				D06F7BD517DC8A3A7584A3BB2A3B3269 /* Tools */,
+				9F620892647CF97AE97C44266AFBC178 /* UI */,
+			);
+			name = YCEasyTool;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E3D95C9656BB48ACDFC370FEFB08CC57 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFD9EE5BC090FAD45EA524C804260604 /* YCEasyTool */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F755F4FFF46F0C8E22A8B9D414AA8628 /* TreeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9E9C0FDAF188371735C7F8340005B22F /* YCTreeMenuProtocol.h */,
+				F07CD5D70C5EF76E6C35B1BFB347D72F /* YCTreeMenuView.h */,
+				0E258C77D517C303C238E248296C39BB /* YCTreeMenuView.m */,
+			);
+			name = TreeMenu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4B507AF46A29472DB106C0FC160CDBFA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC1C1C5A572833BFB8CB970622A916FA /* NSArray+YCTools.h in Headers */,
+				713C67359AE4C81C1C3D4C498E5E5D85 /* NSObject+YCForeverMaker.h in Headers */,
+				57BAFA3104CCC3620DE7082283EB7674 /* YCCollectionView.h in Headers */,
+				7049917FEF84F9DF329C5E93145E67EE /* YCCollectionViewDefine.h in Headers */,
+				CD2B5B487B93D0BFAE1191DE47AF42A2 /* YCEasyTool-umbrella.h in Headers */,
+				E1878BAB36F2B1D179A1D528D464DFB2 /* YCForever.h in Headers */,
+				AD18C85CC1ACB4C9C13C1B888AB20268 /* YCForeverDAO.h in Headers */,
+				B7A8B578D692376A6BEEC0DB63B5B38A /* YCForeverProtocol.h in Headers */,
+				F57A585841C33839A1CD4A5494D7133F /* YCForeverSqlHelper.h in Headers */,
+				9300B1531AADA7A8F55A15B7BB665B24 /* YCGridView.h in Headers */,
+				9B5A281BD280A4817C9BF258E84AEBBC /* YCGridViewCell.h in Headers */,
+				A18B89F98B751A25DCA95DFA380311EA /* YCGridViewDefine.h in Headers */,
+				8829465F714C8A85BD4508B99B27F35C /* YCMemeryCache.h in Headers */,
+				1601D6AE58B4661E567DEE14875B6BE3 /* YCPollingEntity.h in Headers */,
+				0228843B4B21970C57AF7735A676EA48 /* YCPopMenu.h in Headers */,
+				548E762A0EC47F0330994EC8278710AC /* YCProperty.h in Headers */,
+				9E3A7A33C2EBBC84CC485D866F2B2BD3 /* YCSegmentedControl.h in Headers */,
+				D3B739B0726BFD447DC861B8E3C2A0C5 /* YCSegmentItem.h in Headers */,
+				9D587941EE8E2C9C922D14DC81F48855 /* YCTabBar.h in Headers */,
+				61C2FD4DFCFE605124F5E1F386C67A56 /* YCTabBarController.h in Headers */,
+				200F8F558C58E63A8902A70218E4674B /* YCTabBarItem.h in Headers */,
+				345EB094A431632AAAE33D9DEEFA35C8 /* YCTreeMenuProtocol.h in Headers */,
+				9CFE8DD2ECB488AF280B2070797EB824 /* YCTreeMenuView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74CDC7AEF638ECF3B0FE3F834DCBBD23 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3DE7A9A0670ECC6105ED715502C51B4 /* Pods-YCEasyTool_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		216B1BB3D479BE5839F50B97CBBA4BDA /* Pods-YCEasyTool_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 852D38F152D2C085ABD1C645C2A3B3A8 /* Build configuration list for PBXNativeTarget "Pods-YCEasyTool_Example" */;
+			buildPhases = (
+				9B3080D9BD148786C1FBAC493DE21E5E /* Sources */,
+				CFB33B6DA718094046A38A8BFF43A683 /* Frameworks */,
+				74CDC7AEF638ECF3B0FE3F834DCBBD23 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				858826428B42C2849D753C3E1E7C9F4D /* PBXTargetDependency */,
+			);
+			name = "Pods-YCEasyTool_Example";
+			productName = "Pods-YCEasyTool_Example";
+			productReference = 52AD2364A1F46E404CFF069EB64805BB /* Pods_YCEasyTool_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F36C227A9DE1BE75027668197908C07 /* YCEasyTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 041E5202B39903DDFDBF2068E2ED02C3 /* Build configuration list for PBXNativeTarget "YCEasyTool" */;
+			buildPhases = (
+				EC263C7B339FCB0B76AE0348ABC12C01 /* Sources */,
+				E2F4100B9AAC790015F3A76E99477C7E /* Frameworks */,
+				4B507AF46A29472DB106C0FC160CDBFA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YCEasyTool;
+			productName = YCEasyTool;
+			productReference = 086A1659BC8DAB0869AE30E1671FE0A7 /* YCEasyTool.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AC6C01A7CC7F63E7A63C581262341F92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				216B1BB3D479BE5839F50B97CBBA4BDA /* Pods-YCEasyTool_Example */,
+				9F36C227A9DE1BE75027668197908C07 /* YCEasyTool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B3080D9BD148786C1FBAC493DE21E5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A29A97B3A326B210CECB99AC36415C9D /* Pods-YCEasyTool_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC263C7B339FCB0B76AE0348ABC12C01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				755338B33FC3EB7D7FE739140AAC2FB9 /* NSArray+YCTools.m in Sources */,
+				2551EAB1DED5DD1241706AA59F39A7EB /* NSObject+YCForeverMaker.m in Sources */,
+				5BF52B0C1B7AFC3EC7B203B80CDD5AA9 /* YCCollectionView.m in Sources */,
+				613D7207A77274B18C18B23F47F29CB3 /* YCEasyTool-dummy.m in Sources */,
+				5FE8D74E0642BDE1C4D4C30FCED96CBC /* YCForever.m in Sources */,
+				BA66323CCFCE3A1EE43941E6098207DF /* YCForeverDAO.m in Sources */,
+				3F0E93ED636B6AFC53145B6D1724F0D4 /* YCForeverSqlHelper.m in Sources */,
+				1EBB3F72B1FF137444A6468DF41156C7 /* YCGridView.m in Sources */,
+				EF16DCFDD2C4934EF4C197CF812DB8D7 /* YCGridViewCell.m in Sources */,
+				58EFF9E980C1CECF09451221A1E8AB47 /* YCMemeryCache.m in Sources */,
+				ABB4B825E2BD232ED39430852787938F /* YCPollingEntity.m in Sources */,
+				4E49C868493B302DB5386CC6973E3A66 /* YCPopMenu.m in Sources */,
+				26614F7DA2D03537B00E53CCE063EF5D /* YCProperty.m in Sources */,
+				2E5B773EA64FD48D6C02C0D4E7848682 /* YCSegmentedControl.m in Sources */,
+				F22E5502DB3FDB519A28181F6401BD01 /* YCSegmentItem.m in Sources */,
+				8083ED9F6B9454F46467B452BC97FF83 /* YCTabBar.m in Sources */,
+				A300F63D25AFBDD13C68265107D949E8 /* YCTabBarController.m in Sources */,
+				03C6C5806C668112A0A6D76B4252DEA4 /* YCTabBarItem.m in Sources */,
+				8C3D09D9374BA964D7288AE786365D43 /* YCTreeMenuView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		858826428B42C2849D753C3E1E7C9F4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YCEasyTool;
+			target = 9F36C227A9DE1BE75027668197908C07 /* YCEasyTool */;
+			targetProxy = 903C4139102656AED9C55B3776856DE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C3ED16E144B9A188CC88F2343EB3B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		51F393FE91B4B6C835FB4B238187AD09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6C2F25FE721B9C6F86B2665A3FED401A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D37943A42CEAA8205B74ABD936CEFE7 /* YCEasyTool.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YCEasyTool/YCEasyTool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YCEasyTool/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YCEasyTool/YCEasyTool.modulemap";
+				PRODUCT_NAME = YCEasyTool;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6D7780355B5B0E71423A31719C2F50BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1285E0164D77294E54EAF10547D76E7E /* Pods-YCEasyTool_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YCEasyTool_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YCEasyTool_Example/Pods-YCEasyTool_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_YCEasyTool_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF05402E3ABCFFB4688B94B5633D3A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D37943A42CEAA8205B74ABD936CEFE7 /* YCEasyTool.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YCEasyTool/YCEasyTool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YCEasyTool/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YCEasyTool/YCEasyTool.modulemap";
+				PRODUCT_NAME = YCEasyTool;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FF91DF28FA2EE7F66E590C13682B0261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C355645186D0154962DF6018E97C42CD /* Pods-YCEasyTool_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YCEasyTool_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YCEasyTool_Example/Pods-YCEasyTool_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_YCEasyTool_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		041E5202B39903DDFDBF2068E2ED02C3 /* Build configuration list for PBXNativeTarget "YCEasyTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF05402E3ABCFFB4688B94B5633D3A84 /* Debug */,
+				6C2F25FE721B9C6F86B2665A3FED401A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51F393FE91B4B6C835FB4B238187AD09 /* Debug */,
+				1C3ED16E144B9A188CC88F2343EB3B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		852D38F152D2C085ABD1C645C2A3B3A8 /* Build configuration list for PBXNativeTarget "Pods-YCEasyTool_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF91DF28FA2EE7F66E590C13682B0261 /* Debug */,
+				6D7780355B5B0E71423A31719C2F50BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
