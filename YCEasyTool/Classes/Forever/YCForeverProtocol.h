@@ -9,6 +9,8 @@
 #ifndef YCForeverProtocol_h
 #define YCForeverProtocol_h
 
+#import <Foundation/Foundation.h>
+
 @protocol YCForeverItemProtocol <NSObject>
 
 @optional

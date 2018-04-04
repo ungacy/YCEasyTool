@@ -9,6 +9,8 @@
 #ifndef YCTreeMenuProtocol_h
 #define YCTreeMenuProtocol_h
 
+#import <UIKit/UIKit.h>
+
 @protocol YCTreeMenuNodeProtocol <NSObject>
 
 @property (nonatomic, copy) NSString *title;

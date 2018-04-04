@@ -11,6 +11,8 @@
 
 #define YCCollectionViewSingleSectionKey @"SingleSection"
 
+#import <UIKit/UIKit.h>
+
 typedef NSString * (^YCCollectionCellReuseIdentifierBlock)(NSIndexPath *indexPath);
 
 typedef void (^YCCollectionViewCustomCellBlock)(NSIndexPath *indexPath, __kindof UICollectionViewCell *cell);
