@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ye Tao' => 'ungacy@126.com' }
   s.source           = { :git => 'https://github.com/ungacy/YCEasyTool.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://ungacy.github.io'
+  s.social_media_url = 'https://twitter.com/ungacy'
 
   s.ios.deployment_target = '8.0'
 
