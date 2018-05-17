@@ -115,9 +115,11 @@
 - (void)setViewControllers:(NSArray *)viewControllers {
     if (_viewControllers && _viewControllers.count) {
         for (UIViewController *viewController in _viewControllers) {
-            [viewController willMoveToParentViewController:nil];
-            [viewController.view removeFromSuperview];
-            [viewController removeFromParentViewController];
+            if (viewController.viewLoaded) {
+                [viewController willMoveToParentViewController:nil];
+                [viewController.view removeFromSuperview];
+                [viewController removeFromParentViewController];
+            }
         }
     }
 
