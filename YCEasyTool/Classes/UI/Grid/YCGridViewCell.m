@@ -42,7 +42,7 @@
 
 @property (nonatomic, strong) YCGridViewItem *data;
 
-@property (nonatomic, copy) NSMutableDictionary *attributes;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
 
 @end
 
@@ -108,7 +108,7 @@
 
 - (void)updateSeparator:(NSDictionary *)attributes {
     NSNumber *styleNumber = attributes[YCGridViewSeparatorStyleAttributeName];
-    if (!styleNumber) {
+    if (styleNumber == nil) {
         _separator.hidden = YES;
         return;
     }
@@ -119,7 +119,7 @@
     UIColor *color = attributes[YCGridViewSeparatorColorAttributeName];
     NSNumber *lineWidthNumber = attributes[YCGridViewSeparatorWidthAttributeName];
     CGFloat lineWidth = MAX(0.5, lineWidthNumber.floatValue);
-    if (lineWidthNumber) {
+    if (lineWidthNumber != nil) {
         self.separator.lineWidth = lineWidth;
     } else {
         NSNumber *presetWidth = self.attributes[YCGridViewSeparatorWidthAttributeName];

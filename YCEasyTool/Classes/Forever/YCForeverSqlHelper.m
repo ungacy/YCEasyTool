@@ -132,8 +132,8 @@ static inline id ModelCreateNumberFromProperty(__unsafe_unretained id model,
     }
     NSMutableString *sql = [NSMutableString stringWithFormat:@"INSERT OR REPLACE INTO '%@' VALUES ( ", table];
     NSArray<YCProperty *> *propertyArray = [item yc_propertyArray];
-    for (NSUInteger index = 0; index < [propertyArray count]; index++) {
-        [sql appendFormat:@"?%zd,", index + 1];
+    for (int index = 0; index < [propertyArray count]; index++) {
+        [sql appendFormat:@"?%d,", index + 1];
     }
     [sql deleteCharactersInRange:NSMakeRange([sql length] - 1, 1)];
     [sql appendString:@")"];
@@ -347,7 +347,7 @@ static inline id ModelCreateNumberFromProperty(__unsafe_unretained id model,
         [sql appendFormat:@" %@", order];
     }
     if (limit > 0) {
-        [sql appendFormat:@" LIMIT %zd OFFSET %zd", limit, offset];
+        [sql appendFormat:@" LIMIT %ld OFFSET %ld", (long)limit, (long)offset];
     }
     return sql;
 }

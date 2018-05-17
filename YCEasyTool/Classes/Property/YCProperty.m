@@ -194,7 +194,7 @@ static inline NSArray *YCGetPropertyList(Class someClass, YCPropertyParsingType 
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@-%zd", self.name, self.type];
+    return [NSString stringWithFormat:@"%@-%d", self.name, (int)self.type];
 }
 
 @end

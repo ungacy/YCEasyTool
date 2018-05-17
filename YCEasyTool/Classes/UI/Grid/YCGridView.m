@@ -97,7 +97,7 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
                                                      NSDictionary *_Nonnull obj,
                                                      BOOL *_Nonnull stop) {
         NSNumber *value = obj[YCGridViewWidthAttributeName];
-        if (value) {
+        if (value != nil) {
             rightWidth += value.floatValue - self.cellColumnWidth;
         }
     }];
@@ -317,7 +317,7 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
         NSDictionary *theme = rowTheme[@(position.row)];
         if (theme) {
             NSNumber *value = theme[YCGridViewWidthAttributeName];
-            if (value) {
+            if (value != nil) {
                 heightOffset = value.floatValue - _cellRowHeight;
             }
         }
@@ -330,8 +330,8 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
         NSDictionary *theme = columnTheme[@(position.column)];
         if (theme) {
             NSNumber *value = theme[YCGridViewWidthAttributeName];
-            CGFloat configWidth = value ? [value floatValue] : width;
-            if (value) {
+            CGFloat configWidth = value != nil ? [value floatValue] : width;
+            if (value != nil) {
                 position.item.itemSize = CGSizeMake(width, _cellRowHeight);
             }
             configWidth += widthOffset;
@@ -426,7 +426,7 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
     }
     NSDictionary *rowAndColumnTheme = self.extraThemeAttributes[YCGridViewRowAndColumnAttributeName];
     if (rowAndColumnTheme) {
-        NSString *key = [NSString stringWithFormat:@"%zd-%zd", position.row, position.column];
+        NSString *key = [NSString stringWithFormat:@"%ld-%ld", (long)position.row, (long)position.column];
         NSDictionary *theme = rowAndColumnTheme[key];
         if (theme) {
             [cell.attributes setValuesForKeysWithDictionary:theme];
