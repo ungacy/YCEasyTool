@@ -48,6 +48,7 @@ typedef void (^YCTreeMenuCellConfigureBlock)(UITableViewCell *cell, NSIndexPath 
 @optional
 - (void)treeMenu:(YCTreeMenuView *)treeMenuView didChangeNode:(id<YCTreeMenuNodeProtocol>)node;
 
+- (BOOL)treeMenu:(YCTreeMenuView *)treeMenuView shouldChangeNode:(id<YCTreeMenuNodeProtocol>)node;
 @end
 
 #endif /* YCTreeMenuProtocol_h */

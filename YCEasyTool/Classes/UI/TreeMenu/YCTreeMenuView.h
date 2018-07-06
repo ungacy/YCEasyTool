@@ -23,4 +23,6 @@
 
 @property (nonatomic, copy) YCTreeMenuCellConfigureBlock cellConfigureBlock;
 
+- (void)didChangeNode:(id<YCTreeMenuNodeProtocol>)node;
+
 @end

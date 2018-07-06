@@ -118,12 +118,21 @@
     __weak typeof(node) weak_node = node;
     __weak typeof(self) weak_self = self;
     [cell setActionBlock:^() {
-        [weak_self didChangeNode:weak_node];
+        if ([weak_self shouldChangeNode:weak_node]) {
+            [weak_self didChangeNode:weak_node];
+        }
     }];
     if (self.cellConfigureBlock) {
         self.cellConfigureBlock(cell, indexPath);
     }
     return cell;
+}
+
+- (BOOL)shouldChangeNode:(id<YCTreeMenuNodeProtocol>)node {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(treeMenu:shouldChangeNode:)]) {
+        return [self.delegate treeMenu:self shouldChangeNode:node];
+    }
+    return YES;
 }
 
 - (void)didChangeNode:(id<YCTreeMenuNodeProtocol>)node {
