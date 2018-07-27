@@ -142,10 +142,16 @@
     return ^YCForeverMaker *() {
         if (self.itemClass) {
             [[YCForeverDAO sharedInstance] removeItemClass:self.itemClass table:self.tableName where:self.whereCondition];
-        } else if (self.item) {
-            [[YCForeverDAO sharedInstance] removeItem:self.item table:self.tableName where:self.whereCondition];
+        } else {
+            if (self.itemArray) {
+                for (NSObject *obj in self.itemArray) {
+                    self.item = obj;
+                    [[YCForeverDAO sharedInstance] removeItem:self.item table:self.tableName where:self.whereCondition];
+                }
+            } else if (self.item) {
+                [[YCForeverDAO sharedInstance] removeItem:self.item table:self.tableName where:self.whereCondition];
+            }
         }
-
         return self;
     };
 }

@@ -342,7 +342,7 @@ static inline void YCBindObjectToStatement(__unsafe_unretained id model,
     return YES;
 }
 
-    - (BOOL)_dbSetItemFromStmt : (sqlite3_stmt *)stmt item : (NSObject<YCForeverItemProtocol> *)item {
+- (BOOL)_dbSetItemFromStmt:(sqlite3_stmt *)stmt item:(NSObject<YCForeverItemProtocol> *)item {
     NSArray *propertyArray = [item yc_propertyArray];
     for (NSUInteger idx = 0; idx < propertyArray.count; idx++) {
         YCProperty *obj = propertyArray[idx];
@@ -549,12 +549,53 @@ static inline void YCBindObjectToStatement(__unsafe_unretained id model,
         return nil;
     }
     Lock();
+    if (![self _dbOpen]) {
+        Unlock();
+        return nil;
+    }
     sqlite3_stmt *stmt = [self _dbPrepareStmt:sql];
     if (!stmt) {
         Unlock();
         return nil;
     }
     NSMutableArray *itemArray = [NSMutableArray arrayWithCapacity:0];
+    int count = sqlite3_column_count(stmt);
+    if (count != [cls yc_propertyArray].count || !cls) {
+        while (sqlite3_step(stmt) == SQLITE_ROW) {
+            NSMutableDictionary *itemDic = [[NSMutableDictionary alloc] init];
+            int columns = sqlite3_column_count(stmt);
+            for (int i = 0; i < columns; i++) {
+                char *name = (char *)sqlite3_column_name(stmt, i);
+                NSString *key = [NSString stringWithUTF8String:name];
+                switch (sqlite3_column_type(stmt, i)) {
+                    case SQLITE_INTEGER: {
+                        int num = sqlite3_column_int(stmt, i);
+                        [itemDic setValue:[NSNumber numberWithInt:num] forKey:key];
+                    } break;
+                    case SQLITE_FLOAT: {
+                        float num = sqlite3_column_double(stmt, i);
+                        [itemDic setValue:[NSNumber numberWithFloat:num] forKey:key];
+                    } break;
+                    case SQLITE3_TEXT: {
+                        char *text = (char *)sqlite3_column_text(stmt, i);
+                        [itemDic setValue:[NSString stringWithUTF8String:text] forKey:key];
+                    } break;
+                    case SQLITE_BLOB: {
+                        //Need to implement
+                        [itemDic setValue:@"binary" forKey:key];
+                    } break;
+                    case SQLITE_NULL: {
+                        [itemDic setValue:[NSNull null] forKey:key];
+                    }
+                    default:
+                        break;
+                }
+            }
+            [itemArray addObject:itemDic];
+        }
+        Unlock();
+        return itemArray;
+    }
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         id<YCForeverItemProtocol> newItem = [[cls alloc] init];
         [self _dbSetItemFromStmt:stmt item:newItem];
