@@ -27,6 +27,10 @@
 
 - (CGFloat)height;
 
+@optional
+
+@property (nonatomic, copy) NSString *identifier;
+
 @end
 
 typedef void (^YCTreeMenuCellActionBlock)(void);

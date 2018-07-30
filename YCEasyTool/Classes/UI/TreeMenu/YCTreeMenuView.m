@@ -112,8 +112,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell<YCTreeMenuCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.cellClass)];
     id<YCTreeMenuNodeProtocol> node = self.dataSource[indexPath.row];
+    UITableViewCell<YCTreeMenuCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:node.identifier ?: NSStringFromClass(self.cellClass)];
     [cell reloadData:node];
     __weak typeof(node) weak_node = node;
     __weak typeof(self) weak_self = self;
