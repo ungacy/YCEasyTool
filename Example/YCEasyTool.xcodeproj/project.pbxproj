@@ -95,7 +95,7 @@
 
 /* Begin PBXFileReference section */
 		1CF18F9B9E7C68671219EC61 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		1E40EF0E5A4D5E1B0952556E /* YCEasyTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YCEasyTool.podspec; path = ../YCEasyTool.podspec; sourceTree = "<group>"; };
+		1E40EF0E5A4D5E1B0952556E /* YCEasyTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YCEasyTool.podspec; path = ../YCEasyTool.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		345362D21E518AA800E404EE /* YCMenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCMenuNode.h; sourceTree = "<group>"; };
 		345362D31E518AA800E404EE /* YCMenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCMenuNode.m; sourceTree = "<group>"; };
 		345362D61E518B3F00E404EE /* YCMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCMenuCell.h; sourceTree = "<group>"; };

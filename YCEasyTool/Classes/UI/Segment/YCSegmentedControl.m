@@ -216,12 +216,13 @@
 
 - (void)setTitle:(NSString *)title forSegmentAtIndex:(NSUInteger)index {
     // Getting the Segment
-    if (index < self.segments.count) {
-        UIButton *segment = self.segments[index];
+    if (index < self.items.count) {
+        YCSegmentItem *segment = self.items[index];
         if ([title isKindOfClass:[NSString class]]) {
-            [segment setTitle:title forState:UIControlStateNormal];
+            segment.title = title;
         }
     }
+    [self updateSegmentsFormat];
 }
 
 - (void)setSelected:(BOOL)selected segmentAtIndex:(NSUInteger)index {
