@@ -158,7 +158,7 @@ const NSUInteger YCPopMenuNoSelectionIndex = NSNotFound;
     NSParameterAssert(self.cellClass);
     id<YCPopMenuItemProtocol> data = [self objectAtIndexPath:indexPath];
     NSString *cellIdentifier = nil;
-    if ([data respondsToSelector:@selector(cellIdentifier)]) {
+    if ([data respondsToSelector:@selector(cellIdentifier)] && [data cellIdentifier]) {
         cellIdentifier = [data cellIdentifier];
     } else {
         cellIdentifier = NSStringFromClass(self.cellClass);
