@@ -400,6 +400,7 @@ static inline void YCBindObjectToStatement(__unsafe_unretained id model,
 }
 
 - (void)clear {
+    [self _dbOpen];
     NSString *sql = @"SELECT name FROM sqlite_master WHERE type='table';";
     NSArray *array = [self queryWithSql:sql];
     for (NSDictionary *dict in array) {
