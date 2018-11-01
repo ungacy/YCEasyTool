@@ -94,14 +94,18 @@ typedef NS_ENUM(NSUInteger, YCPopMenuDirection) {
  as it's name
  */
 @property (nonatomic, assign) CGSize menuSize; // default is 6
+
 /**
  as it's name
  */
 @property (nonatomic, assign) CGFloat maxCellCount; // default is 6
+
 /**
  define your own offset
  */
 @property (nonatomic, assign) CGVector vector; //default is {0,0}
+
+#pragma mark - animation
 
 /**
  as it's name
@@ -112,6 +116,16 @@ typedef NS_ENUM(NSUInteger, YCPopMenuDirection) {
  as it's name
  */
 @property (nonatomic, assign) CGFloat animationDuration; // default is 0.3
+
+
+/**
+ + (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_AVAILABLE_IOS(7_0);
+ */
+@property (nonatomic, assign) CGFloat damping; // default is 1
+
+@property (nonatomic, assign) CGFloat initialSpringVelocity; // default is 0
+
+@property (nonatomic, assign) UIViewAnimationOptions options;
 
 /**
  as it's name

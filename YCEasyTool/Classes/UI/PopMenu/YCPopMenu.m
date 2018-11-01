@@ -68,6 +68,9 @@ const NSUInteger YCPopMenuNoSelectionIndex = NSNotFound;
         _maxCellCount = 6;
         _dismissWhenSelectedMenu = YES;
         _arrowSize = CGSizeMake(10, 5);
+        _damping = 1;
+        _initialSpringVelocity = 0;
+        _options = UIViewAnimationOptionCurveEaseInOut;
     }
     return self;
 }
@@ -224,10 +227,10 @@ const NSUInteger YCPopMenuNoSelectionIndex = NSNotFound;
             self.cover.alpha = 1;
             [self.arrow removeFromSuperview];
         }
-        [UIView animateWithDuration:self.animationDuration
-            delay:0.0
-            options:UIViewAnimationOptionCurveEaseInOut
-            animations:^{
+        [UIView animateWithDuration:self.animationDuration delay:0
+             usingSpringWithDamping:_damping
+              initialSpringVelocity:_initialSpringVelocity
+                            options:_options animations:^{
                 if (self.visible) {
                     self.frame = oldFrame;
                     oldFrame.origin = CGPointZero;
