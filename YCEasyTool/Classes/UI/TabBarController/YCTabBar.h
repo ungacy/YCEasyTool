@@ -22,6 +22,12 @@
  */
 - (void)tabBar:(YCTabBar *)tabBar didSelectItemAtIndex:(NSInteger)index;
 
+@optional
+/**
+ * Tells the delegate that the specified tab bar item is now double tap.
+ */
+- (void)tabBar:(YCTabBar *)tabBar didDoubleTapItemAtIndex:(NSInteger)index;
+
 @end
 
 @interface YCTabBar : UIView

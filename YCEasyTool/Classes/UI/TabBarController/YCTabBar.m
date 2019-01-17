@@ -114,7 +114,23 @@
     _items = [items copy];
     for (YCTabBarItem *item in _items) {
         [item addTarget:self action:@selector(tabBarItemWasSelected:) forControlEvents:UIControlEventTouchDown];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        tap.numberOfTapsRequired = 2;
+        [item addGestureRecognizer:tap];
         [self.backgroundView addSubview:item];
+    }
+}
+
+- (void)doubleTap:(UITapGestureRecognizer *)tap {
+    if (tap.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    if (tap.view != self.selectedItem) {
+        return;
+    }
+    if ([[self delegate] respondsToSelector:@selector(tabBar:didDoubleTapItemAtIndex:)]) {
+        NSInteger index = [self.items indexOfObject:self.selectedItem];
+        [[self delegate] tabBar:self didDoubleTapItemAtIndex:index];
     }
 }
 
@@ -138,7 +154,13 @@
 
 #pragma mark - Item selection
 
-- (void)tabBarItemWasSelected:(id)sender {
+- (void)tabBarItemWasSelected:(YCTabBarItem *)sender {
+    if (sender != self.selectedItem) {
+        sender.enabled = NO;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            sender.enabled = YES;
+        });
+    }
     [self setSelectedItem:sender];
     if ([[self delegate] respondsToSelector:@selector(tabBar:shouldSelectItemAtIndex:)]) {
         NSInteger index = [self.items indexOfObject:sender];
