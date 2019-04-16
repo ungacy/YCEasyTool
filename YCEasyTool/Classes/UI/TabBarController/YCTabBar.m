@@ -12,7 +12,10 @@
 @interface YCTabBar ()
 
 @property (nonatomic) CGFloat itemWidth;
-@property (nonatomic) UIScrollView *backgroundView;
+
+@property (nonatomic, strong) UIScrollView *backgroundView;
+
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 
 @end
 
@@ -114,9 +117,6 @@
     _items = [items copy];
     for (YCTabBarItem *item in _items) {
         [item addTarget:self action:@selector(tabBarItemWasSelected:) forControlEvents:UIControlEventTouchDown];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
-        tap.numberOfTapsRequired = 2;
-        [item addGestureRecognizer:tap];
         [self.backgroundView addSubview:item];
     }
 }
@@ -155,12 +155,6 @@
 #pragma mark - Item selection
 
 - (void)tabBarItemWasSelected:(YCTabBarItem *)sender {
-    if (sender != self.selectedItem) {
-        sender.enabled = NO;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            sender.enabled = YES;
-        });
-    }
     [self setSelectedItem:sender];
     if ([[self delegate] respondsToSelector:@selector(tabBar:shouldSelectItemAtIndex:)]) {
         NSInteger index = [self.items indexOfObject:sender];
@@ -175,6 +169,7 @@
 }
 
 - (void)setSelectedItem:(YCTabBarItem *)selectedItem {
+    [selectedItem addGestureRecognizer:self.tap];
     NSInteger index = [self.items indexOfObject:selectedItem];
     [self centerItem:index];
     if (selectedItem == _selectedItem) {
@@ -196,6 +191,14 @@
                                                         green:245 / 255.0
                                                          blue:245 / 255.0
                                                         alpha:alpha]];
+}
+
+- (UITapGestureRecognizer *)tap {
+    if (!_tap) {
+        _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        _tap.numberOfTapsRequired = 2;
+    }
+    return _tap;
 }
 
 @end

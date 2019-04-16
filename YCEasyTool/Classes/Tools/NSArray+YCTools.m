@@ -14,7 +14,7 @@ typedef BOOL (^YCToolsSelectBlock)(NSUInteger index, id origin);
 
 @implementation NSArray (YCTools)
 
-- (void)yc_each:(void (^)(id origin))block {
+- (void)yc_each:(void(NS_NOESCAPE ^)(id origin))block {
     if (!block) {
         return;
     }
@@ -23,7 +23,7 @@ typedef BOOL (^YCToolsSelectBlock)(NSUInteger index, id origin);
     }];
 }
 
-- (void)yc_eachIndex:(void (^)(NSUInteger idx, id origin))block {
+- (void)yc_eachIndex:(void(NS_NOESCAPE ^)(NSUInteger idx, id origin))block {
     if (!block) {
         return;
     }
@@ -32,7 +32,7 @@ typedef BOOL (^YCToolsSelectBlock)(NSUInteger index, id origin);
     }];
 }
 
-- (NSMutableArray *)yc_mapWithBlock:(id (^)(NSUInteger idx, id origin))block {
+- (NSMutableArray *)yc_mapWithBlock:(id(NS_NOESCAPE ^)(NSUInteger idx, id origin))block {
     if (!block) {
         return nil;
     }
@@ -62,7 +62,7 @@ typedef BOOL (^YCToolsSelectBlock)(NSUInteger index, id origin);
     return result;
 }
 
-- (NSMutableArray *)yc_selectWithBlock:(BOOL (^)(NSUInteger idx, id origin))block {
+- (NSMutableArray *)yc_selectWithBlock:(BOOL(NS_NOESCAPE ^)(NSUInteger idx, id origin))block {
     if (!block) {
         return nil;
     }

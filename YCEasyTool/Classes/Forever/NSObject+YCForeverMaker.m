@@ -35,10 +35,14 @@
     if (custom) {
         return custom;
     }
-    if (self.itemClass) {
-        return NSStringFromClass(self.itemClass);
+    Class someClass = self.itemClass;
+    if (!someClass) {
+        someClass = [self.item class];
     }
-    return NSStringFromClass([self.item class]);
+    if ([someClass respondsToSelector:@selector(tableName)]) {
+        return [someClass tableName];
+    }
+    return NSStringFromClass(someClass);
 }
 
 - (id)whereCondition {
