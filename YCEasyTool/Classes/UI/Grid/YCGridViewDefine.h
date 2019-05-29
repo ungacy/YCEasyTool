@@ -138,7 +138,10 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewSelectionMode) {
 
 typedef NS_OPTIONS(NSUInteger, YCGridViewCellSeparatorStyle) {
     YCGridViewCellSeparatorStyleNone = 0,
-    YCGridViewCellSeparatorStyleLine = 1 << 0,
+    YCGridViewCellSeparatorStyleLineBottom = 1 << 0,
+    YCGridViewCellSeparatorStyleLineRight = 1 << 1,
+    YCGridViewCellSeparatorStyleLineLeft = 1 << 2,
+    YCGridViewCellSeparatorStyleLineTop = 1 << 3,
 };
 
 typedef NS_ENUM(NSUInteger, YCGridViewCellTableColumnPosition) {

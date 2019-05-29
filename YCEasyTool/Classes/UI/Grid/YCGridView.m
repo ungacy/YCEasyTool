@@ -53,11 +53,23 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
 
 @property (nonatomic, assign) YCGridViewOperation operation;
 
+@property (nonatomic, strong) Class cellClass;
+
 @end
 
 @implementation YCGridView
 
++ (instancetype)gridViewWithCellClass:(Class)cellClass {
+    NSParameterAssert([cellClass isSubclassOfClass:[YCGridViewCell class]]);
+    YCGridView *grid = [[YCGridView alloc] initWithFrame:CGRectZero cellClass:cellClass ?: [YCGridViewCell class]];
+    return grid;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
+    return [self initWithFrame:frame cellClass:[YCGridViewCell class]];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame cellClass:(Class)cellClass {
     self = [super initWithFrame:frame];
     if (self) {
         _selectedRow = YCGridViewNoSelection;
@@ -66,6 +78,7 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
         _cellColumnWidth = 40;
         _titleRowHeight = 40;
         _cellRowHeight = 40;
+        _cellClass = cellClass;
         [self initUI];
     }
     return self;
@@ -120,6 +133,8 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
         NSParameterAssert(check);
         return;
     }
+    _selectedRow = YCGridViewNoSelection;
+    _selectedColumn = YCGridViewNoSelection;
     NSArray *transform = [self.data yc_mapWithBlock:^id(NSUInteger index, id origin) {
         YCGridViewItem *item = [YCGridViewItem new];
         item.data = origin;
@@ -136,7 +151,7 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
         }
         return NO;
     }];
-    _columnCount = self.cellArray.firstObject.count;
+    _columnCount = self.data.firstObject.count - 1;
     _rowCount = self.cellArray.count;
     self.rowTitleArray = [transform yc_selectWithBlock:^BOOL(NSUInteger index, YCGridViewItem *origin) {
                              if ([origin isKindOfClass:[NSArray class]]) {
@@ -169,6 +184,13 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
     [self.rightHeader reloadData];
     [self.leftView reloadData];
     [self.rightView reloadData];
+    [self setNeedsDisplay];
+    if (self.rightView.dataSource[YCCollectionViewSingleSectionKey].count == 0) {
+        self.emptyView.frame = self.rightView.bounds;
+        self.rightView.collectionView.backgroundView = self.emptyView;
+    } else {
+        self.rightView.collectionView.backgroundView = nil;
+    }
 }
 
 - (BOOL)check {
@@ -178,7 +200,7 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
             return NO;
         }
     }
-    return count >= 2 && self.data.count >= 2;
+    return count >= 2 && self.data.count >= 1;
 }
 
 - (void)reloadRow:(NSInteger)row column:(NSInteger)column {
@@ -549,7 +571,7 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
     [self customLayout:collectionView.flowLayout];
     collectionView.collectionView.bounces = _bounces;
     collectionView.collectionView.showsVerticalScrollIndicator = NO;
-    collectionView.cellClass = [YCGridViewCell class];
+    collectionView.cellClass = _cellClass;
     collectionView.backgroundColor = [UIColor clearColor];
     return collectionView;
 }

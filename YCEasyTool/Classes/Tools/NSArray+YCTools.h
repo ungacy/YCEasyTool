@@ -20,4 +20,8 @@
 
 - (NSMutableArray<ObjectType> *)yc_flattern;
 
+- (NSSet *)yc_toSet;
+
+- (NSArray *)yc_reverse;
+
 @end

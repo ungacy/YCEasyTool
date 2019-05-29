@@ -27,6 +27,8 @@
  */
 @interface YCGridView : UIView
 
++ (instancetype)gridViewWithCellClass:(Class)cellClass;
+
 /**
 
  -----------------|-------------|
@@ -54,6 +56,8 @@
 @property (nonatomic, assign) CGFloat cellColumnWidth;
 
 #pragma mark - Theme
+
+@property (nonatomic, strong) UIView *emptyView;
 
 @property (nonatomic, strong) UIColor *selectedCellColor;
 

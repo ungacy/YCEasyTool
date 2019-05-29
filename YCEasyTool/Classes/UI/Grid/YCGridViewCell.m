@@ -127,8 +127,12 @@
     }
     CGFloat width = CGRectGetWidth(self.contentView.frame);
     CGFloat height = CGRectGetHeight(self.contentView.frame);
-    if (style & YCGridViewCellSeparatorStyleLine) {
+    if (style & YCGridViewCellSeparatorStyleLineBottom) {
         [path moveToPoint:CGPointMake(0, height - lineWidth)];
+        [path addLineToPoint:CGPointMake(width, height - lineWidth)];
+    }
+    if (style & YCGridViewCellSeparatorStyleLineRight) {
+        [path moveToPoint:CGPointMake(width, 0)];
         [path addLineToPoint:CGPointMake(width, height - lineWidth)];
     }
 

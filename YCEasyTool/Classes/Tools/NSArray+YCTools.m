@@ -80,4 +80,12 @@ typedef BOOL (^YCToolsSelectBlock)(NSUInteger index, id origin);
     return result;
 }
 
+- (NSSet *)yc_toSet {
+    return [NSSet setWithArray:self];
+}
+
+- (NSArray *)yc_reverse {
+    return [[self reverseObjectEnumerator] allObjects];
+}
+
 @end
