@@ -18,14 +18,23 @@
 
 @implementation YCCollectionView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         _section = @[YCCollectionViewSingleSectionKey];
         _dataSource = [@{ YCCollectionViewSingleSectionKey: @[] } mutableCopy];
+        _flowLayout = layout;
     }
     return self;
+}
+
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
+    return [self initWithFrame:CGRectZero collectionViewLayout:layout];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    return [self initWithFrame:frame collectionViewLayout:nil];
 }
 
 - (void)setCellClass:(Class)cellClass {

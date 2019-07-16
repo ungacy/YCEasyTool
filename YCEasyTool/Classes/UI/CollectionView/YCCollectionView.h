@@ -11,6 +11,10 @@
 
 @interface YCCollectionView : UIView
 
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout;
+
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout;
+
 @property (nonatomic, strong) Class cellClass;
 
 @property (nonatomic, strong) NSArray<Class> *cellClassArray;

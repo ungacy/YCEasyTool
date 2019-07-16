@@ -181,9 +181,12 @@
                                 constrainedToSize:CGSizeMake(frameSize.width, 20)];
 #endif
         }
-
+        
         CGFloat textOffset = 2.0f;
-
+        if (self.badgeBackgroundImage) {
+            badgeSize = self.badgeBackgroundImage.size;
+            textOffset = 0;
+        }
         if (badgeSize.width < badgeSize.height) {
             badgeSize = CGSizeMake(badgeSize.height, badgeSize.height);
         }
