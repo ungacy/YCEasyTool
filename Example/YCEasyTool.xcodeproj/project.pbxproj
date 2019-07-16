@@ -16,7 +16,6 @@
 		34B6E1191E5BFBD8002F02AC /* YCChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B6E1181E5BFBD8002F02AC /* YCChildViewController.m */; };
 		34EE708D2074F9EB0040A0CA /* YCEasyTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 34EE708B2074F9EB0040A0CA /* YCEasyTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34EE70902074F9EB0040A0CA /* YCEasyTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34EE70892074F9EB0040A0CA /* YCEasyTool.framework */; };
-		34EE70912074F9EB0040A0CA /* YCEasyTool.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34EE70892074F9EB0040A0CA /* YCEasyTool.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34EE70CA2074FA290040A0CA /* YCCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EE70992074FA290040A0CA /* YCCollectionView.m */; };
 		34EE70CB2074FA290040A0CA /* YCCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 34EE709A2074FA290040A0CA /* YCCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34EE70CC2074FA290040A0CA /* YCCollectionViewDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 34EE709B2074FA290040A0CA /* YCCollectionViewDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,7 +85,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				34EE70912074F9EB0040A0CA /* YCEasyTool.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,7 +528,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				242A8DC21E36A1612EC09DE2 /* [CP] Embed Pods Frameworks */,
-				9A975737B5F89ED2E26B0642 /* [CP] Copy Pods Resources */,
 				34EE70952074F9EC0040A0CA /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -550,7 +547,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = YC;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Ye Tao";
 				TargetAttributes = {
 					34EE70882074F9EB0040A0CA = {
@@ -564,7 +561,7 @@
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "YCEasyTool" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -608,7 +605,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YCEasyTool_Example/Pods-YCEasyTool_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-YCEasyTool_Example/Pods-YCEasyTool_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/YCEasyTool/YCEasyTool.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -617,22 +614,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YCEasyTool_Example/Pods-YCEasyTool_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A975737B5F89ED2E26B0642 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YCEasyTool_Example/Pods-YCEasyTool_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YCEasyTool_Example/Pods-YCEasyTool_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B2C70DBBA821B1B480943F58 /* [CP] Check Pods Manifest.lock */ = {
@@ -797,6 +779,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -850,6 +833,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

@@ -1,6 +1,6 @@
 {
   "name": "YCEasyTool",
-  "version": "0.2",
+  "version": "0.2.20",
   "summary": "A set of tools.",
   "description": "# A set of tools.\n\n## Utils\n\n- Polling\n\n## Runtime\n\n- Property\n\n## Persistence\n\n- Forever\n\n## UI\n\n- TreeMenu\n\n- Segment\n\n- PopMenu\n\n- TabBarController\n\n- GridView",
   "homepage": "https://github.com/ungacy/YCEasyTool",
@@ -13,9 +13,9 @@
   },
   "source": {
     "git": "https://github.com/ungacy/YCEasyTool.git",
-    "tag": "0.2"
+    "tag": "0.2.20"
   },
-  "social_media_url": "https://ungacy.github.io",
+  "social_media_url": "https://twitter.com/ungacy",
   "platforms": {
     "ios": "8.0"
   },

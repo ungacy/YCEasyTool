@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong) __kindof UICollectionViewLayout *flowLayout;
 
 @end
 
@@ -234,10 +234,11 @@
 
 - (UICollectionViewFlowLayout *)flowLayout {
     if (!_flowLayout) {
-        _flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        _flowLayout.minimumLineSpacing = 0;
-        _flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        _flowLayout.itemSize = CGSizeMake(110, 110);
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.minimumLineSpacing = 0;
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        flowLayout.itemSize = CGSizeMake(110, 110);
+        _flowLayout = flowLayout;
     }
     return _flowLayout;
 }
