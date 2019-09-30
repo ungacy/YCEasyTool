@@ -120,6 +120,9 @@
     if (_style != YCSegmentedControlStyleIndicator) {
         return;
     }
+    if (self.segments.count == 0) {
+        return;
+    }
     UIButton *button = self.segments[self.currentSelected];
     CGRect frame = CGRectMake(button.frame.origin.x + button.titleLabel.frame.origin.x,
                               self.frame.size.height - self.indicatorHeight,
@@ -202,6 +205,7 @@
                 [segment setAttributedTitle:title forState:UIControlStateNormal];
             }
         }
+        [segment layoutIfNeeded];
     }
     if (self.style == YCSegmentedControlStyleIndicator) {
         [self bringSubviewToFront:self.indicator];

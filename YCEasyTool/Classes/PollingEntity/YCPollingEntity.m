@@ -64,6 +64,7 @@
 - (void)stopRunning {
     [self pause];
     self.block = nil;
+    self.current = self.max;
 }
 
 - (void)pause {

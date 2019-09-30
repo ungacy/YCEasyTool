@@ -57,36 +57,59 @@
                   count);
 }
 
+//- (void)layoutSubviews {
+//    CGSize frameSize = self.frame.size;
+//    CGFloat minimumContentHeight = [self minimumContentHeight];
+//
+//    [[self backgroundView] setFrame:CGRectMake(0, frameSize.height - minimumContentHeight,
+//                                               frameSize.width, frameSize.height)];
+//
+//    if (self.itemWidth <= 0) {
+//        self.itemWidth = [self itemWidthWithCount:self.items.count];
+//    }
+//
+//    NSInteger index = 0;
+//
+//    // Layout items
+//
+//    for (YCTabBarItem *item in [self items]) {
+//        CGFloat itemHeight = [item itemHeight];
+//
+//        if (!itemHeight) {
+//            itemHeight = frameSize.height;
+//        }
+//
+//        [item setFrame:CGRectMake(self.contentEdgeInsets.left + (index * self.itemWidth),
+//                                  roundf(frameSize.height - itemHeight) - self.contentEdgeInsets.top,
+//                                  self.itemWidth, itemHeight - self.contentEdgeInsets.bottom)];
+//        [item setNeedsDisplay];
+//
+//        index++;
+//    }
+//    [self.backgroundView setContentSize:CGSizeMake(self.itemWidth * self.items.count, frameSize.height)];
+//}
+
 - (void)layoutSubviews {
     CGSize frameSize = self.frame.size;
-    CGFloat minimumContentHeight = [self minimumContentHeight];
-
-    [[self backgroundView] setFrame:CGRectMake(0, frameSize.height - minimumContentHeight,
-                                               frameSize.width, frameSize.height)];
-
+    [[self backgroundView] setFrame:CGRectMake(0, 0, frameSize.width, frameSize.height)];
     if (self.itemWidth <= 0) {
         self.itemWidth = [self itemWidthWithCount:self.items.count];
     }
-
     NSInteger index = 0;
-
-    // Layout items
-
     for (YCTabBarItem *item in [self items]) {
-        CGFloat itemHeight = [item itemHeight];
-
+        CGFloat itemHeight = item.itemHeight;
         if (!itemHeight) {
             itemHeight = frameSize.height;
         }
-
         [item setFrame:CGRectMake(self.contentEdgeInsets.left + (index * self.itemWidth),
-                                  roundf(frameSize.height - itemHeight) - self.contentEdgeInsets.top,
-                                  self.itemWidth, itemHeight - self.contentEdgeInsets.bottom)];
+                                  frameSize.height - itemHeight,
+                                  self.itemWidth, itemHeight)];
         [item setNeedsDisplay];
-
+        
         index++;
     }
-    [self.backgroundView setContentSize:CGSizeMake(self.itemWidth * self.items.count, frameSize.height)];
+    self.backgroundView.clipsToBounds = NO;
+    [self.backgroundView setContentSize:frameSize];
 }
 
 #pragma mark - Configuration
