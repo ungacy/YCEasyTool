@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YCEasyTool'
-  s.version          = '0.2.22'
+  s.version          = '0.2.23'
   s.summary          = 'A set of tools.'
 
   s.description      = <<-DESC
