@@ -20,10 +20,14 @@ static NSString *const kYCFDBFileName = @"forever.sqlite";
 @implementation YCForever
 
 + (void)setupWithPath:(NSString *)path {
-    [YCForeverDAO setupWithPath:path];
+    [YCForeverDAO.sharedInstance setupWithPath:path];
 }
 
 + (void)setupWithName:(NSString *)name {
+    [self setupWithName:name key:nil];
+}
+
++ (void)setupWithName:(NSString *)name key:(NSString *)key {
     NSString *cacheFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSString *dir = [cacheFolder stringByAppendingPathComponent:name];
     BOOL isDir;
@@ -34,7 +38,11 @@ static NSString *const kYCFDBFileName = @"forever.sqlite";
                                                         error:NULL];
     }
     NSString *path = [dir stringByAppendingPathComponent:kYCFDBFileName];
-    [YCForeverDAO setupWithPath:path];
+    YCForeverDAO *dao = [YCForeverDAO sharedInstance];
+    if (key) {
+        dao = [YCForeverDAO instance:key];
+    }
+    [dao setupWithPath:path];
 }
 
 + (void)close {

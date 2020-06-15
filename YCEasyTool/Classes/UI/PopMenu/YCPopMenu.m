@@ -381,7 +381,9 @@ static inline CGRect CGRectOffsetVector(CGRect rect, CGVector vector) {
     }
     if ([self.dataArray.firstObject respondsToSelector:@selector(menuHeight)]) {
         height = 0;
-        for (id<YCPopMenuItemProtocol> item in self.dataArray) {
+        NSUInteger count = MIN(self.dataArray.count, self.maxCellCount);
+        for (NSUInteger index = 0; index < count; ++index) {
+            id<YCPopMenuItemProtocol> item = self.dataArray[index];
             height += item.menuHeight;
         }
     }

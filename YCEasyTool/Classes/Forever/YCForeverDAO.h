@@ -11,11 +11,13 @@
 
 @interface YCForeverDAO : NSObject
 
-+ (void)setupWithPath:(NSString *)path;
+- (void)setupWithPath:(NSString *)path;
 
 + (void)close;
 
 + (instancetype)sharedInstance;
+
++ (instancetype)instance:(NSString *)key;
 
 @property (nonatomic, assign) BOOL verbose; ///< Set `YES` to enable error logs for debug.
 

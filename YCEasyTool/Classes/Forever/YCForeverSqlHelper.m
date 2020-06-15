@@ -125,8 +125,8 @@ static inline id ModelCreateNumberFromProperty(__unsafe_unretained id model,
     return sql;
 }
 
-+ (NSString *)insertSqlWithItem:(NSObject<YCForeverItemProtocol> *)item
-                          table:(NSString *)table {
+    + (NSString *)insertSqlWithItem : (NSObject<YCForeverItemProtocol> *)item
+                                      table : (NSString *)table {
     if (!table) {
         return nil;
     }
@@ -301,7 +301,6 @@ static inline id ModelCreateNumberFromProperty(__unsafe_unretained id model,
     [itemArray enumerateObjectsUsingBlock:^(NSObject<YCForeverItemProtocol> *_Nonnull item,
                                             NSUInteger idx,
                                             BOOL *_Nonnull stop) {
-
         if (![item isKindOfClass:itemClass]) {
             NSAssert([item isKindOfClass:itemClass], @"Items in array are not the same class");
             return;

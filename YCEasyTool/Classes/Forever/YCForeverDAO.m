@@ -9,8 +9,8 @@
 #import "YCForeverDAO.h"
 #import "YCForeverSqlHelper.h"
 #import "YCProperty.h"
-#import <sqlite3.h>
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
 #define Lock() dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER)
 #define Unlock() dispatch_semaphore_signal(self->_lock)
@@ -176,11 +176,15 @@ static inline void YCBindObjectToStatement(__unsafe_unretained id model,
     }
 }
 
+static NSString *const kYCForeverDAODefaultKey = @"com.ungacy.forever";
+
 @interface YCForeverDAO ()
 
 @property (nonatomic, strong) NSString *dbPath;
 
 @property (nonatomic, assign) sqlite3 *db;
+
+@property (nonatomic, strong) NSMapTable *daoInstance;
 
 @end
 
@@ -192,25 +196,42 @@ static inline void YCBindObjectToStatement(__unsafe_unretained id model,
 }
 
 + (instancetype)sharedInstance {
-    static id instance = nil;
+    static YCForeverDAO *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
+        instance.daoInstance = [NSMapTable strongToStrongObjectsMapTable];
     });
     return instance;
 }
 
-- (instancetype)init {
++ (instancetype)instance:(NSString *)key {
+    YCForeverDAO *shared = YCForeverDAO.sharedInstance;
+    YCForeverDAO *some = [shared.daoInstance objectForKey:key];
+    if (!some) {
+        some = [[YCForeverDAO alloc] initWithKey:key];
+        [shared.daoInstance setObject:some forKey:key];
+    }
+    return some;
+}
+
+- (instancetype)initWithKey:(NSString *)key {
     self = [super init];
     if (self) {
         _lock = dispatch_semaphore_create(1);
-        _queue = dispatch_queue_create("com.ungacy.forever", DISPATCH_QUEUE_CONCURRENT);
+        const char *_Nullable label = [key UTF8String];
+        _queue = dispatch_queue_create(label, DISPATCH_QUEUE_CONCURRENT);
         _globalInstances = [NSMutableSet setWithCapacity:0];
         _verbose = YES;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_appWillBeTerminated) name:UIApplicationWillTerminateNotification object:nil];
     }
     return self;
 }
+
+- (instancetype)init {
+    return [self initWithKey:kYCForeverDAODefaultKey];
+}
+
 - (void)_appWillBeTerminated {
     Lock();
     UIBackgroundTaskIdentifier taskID = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
@@ -342,7 +363,7 @@ static inline void YCBindObjectToStatement(__unsafe_unretained id model,
     return YES;
 }
 
-- (BOOL)_dbSetItemFromStmt:(sqlite3_stmt *)stmt item:(NSObject<YCForeverItemProtocol> *)item {
+    - (BOOL)_dbSetItemFromStmt : (sqlite3_stmt *)stmt item : (NSObject<YCForeverItemProtocol> *)item {
     NSArray *propertyArray = [item yc_propertyArray];
     for (NSUInteger idx = 0; idx < propertyArray.count; idx++) {
         YCProperty *obj = propertyArray[idx];
@@ -353,14 +374,18 @@ static inline void YCBindObjectToStatement(__unsafe_unretained id model,
 
 #pragma mark - public
 
-+ (void)setupWithPath:(NSString *)path {
-    YCForeverDAO *dao = [YCForeverDAO sharedInstance];
+- (void)setupWithPath:(NSString *)path {
+    YCForeverDAO *dao = self;
     if ([path isEqualToString:dao.dbPath]) {
         return;
     } else {
         [self close];
     }
     dao.dbPath = path;
+}
+
+- (void)close {
+    [self _dbClose];
 }
 
 + (void)close {

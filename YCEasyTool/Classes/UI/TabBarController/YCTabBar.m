@@ -139,7 +139,7 @@
 
     _items = [items copy];
     for (YCTabBarItem *item in _items) {
-        [item addTarget:self action:@selector(tabBarItemWasSelected:) forControlEvents:UIControlEventTouchDown];
+        [item addTarget:self action:@selector(tabBarItemWasSelected:) forControlEvents:UIControlEventTouchUpInside];
         [self.backgroundView addSubview:item];
     }
 }
@@ -178,13 +178,13 @@
 #pragma mark - Item selection
 
 - (void)tabBarItemWasSelected:(YCTabBarItem *)sender {
-    [self setSelectedItem:sender];
     if ([[self delegate] respondsToSelector:@selector(tabBar:shouldSelectItemAtIndex:)]) {
         NSInteger index = [self.items indexOfObject:sender];
         if (![[self delegate] tabBar:self shouldSelectItemAtIndex:index]) {
             return;
         }
     }
+    [self setSelectedItem:sender];
     if ([[self delegate] respondsToSelector:@selector(tabBar:didSelectItemAtIndex:)]) {
         NSInteger index = [self.items indexOfObject:self.selectedItem];
         [[self delegate] tabBar:self didSelectItemAtIndex:index];

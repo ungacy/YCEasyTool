@@ -90,7 +90,7 @@
     contentAttributes[NSFontAttributeName] = attributes[NSFontAttributeName];
     contentAttributes[NSForegroundColorAttributeName] = attributes[NSForegroundColorAttributeName];
     NSString *plainText = [self.data.data description];
-    if (attributes.count > 0) {
+    if (attributes.count > 0 && plainText.length > 0) {
         NSMutableAttributedString *attributedText = [self.content.attributedText mutableCopy];
         if (![attributedText.string isEqualToString:plainText]) {
             attributedText = [[NSMutableAttributedString alloc] initWithString:plainText attributes:attributes];
@@ -134,6 +134,14 @@
     if (style & YCGridViewCellSeparatorStyleLineRight) {
         [path moveToPoint:CGPointMake(width, 0)];
         [path addLineToPoint:CGPointMake(width, height - lineWidth)];
+    }
+    if (style & YCGridViewCellSeparatorStyleLineLeft) {
+        [path moveToPoint:CGPointMake(0, 0)];
+        [path addLineToPoint:CGPointMake(0, height - lineWidth)];
+    }
+    if (style & YCGridViewCellSeparatorStyleLineTop) {
+        [path moveToPoint:CGPointMake(0, 0)];
+        [path addLineToPoint:CGPointMake(width, 0)];
     }
 
     self.separator.frame = self.contentView.bounds;

@@ -61,6 +61,12 @@
 
 - (YCForeverMaker * (^)(void))drop;
 
+- (YCForeverMaker * (^)(void))empty;
+
+#pragma mark - DAO Instance
+
+- (YCForeverMaker * (^)(NSString *daoKey))dao;
+
 @end
 
 @interface NSObject (YCForeverMaker)

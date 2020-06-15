@@ -16,6 +16,8 @@
 
 + (void)setupWithName:(NSString *)name;
 
++ (void)setupWithName:(NSString *)name key:(NSString *)key;
+
 + (void)close;
 
 @end

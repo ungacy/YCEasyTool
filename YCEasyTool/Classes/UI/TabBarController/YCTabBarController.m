@@ -82,6 +82,9 @@
 #pragma mark - Methods
 
 - (UIViewController *)selectedViewController {
+    if (self.selectedIndex >= self.viewControllers.count) {
+        return nil;
+    }
     return [[self viewControllers] objectAtIndex:[self selectedIndex]];
 }
 

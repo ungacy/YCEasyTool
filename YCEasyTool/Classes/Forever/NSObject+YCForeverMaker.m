@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) NSMutableDictionary *sqlMap;
 
+@property (nonatomic, weak) YCForeverDAO *daoInstance;
+
 @end
 
 @implementation YCForeverMaker
@@ -26,6 +28,7 @@
     self = [super init];
     if (self) {
         _sqlMap = [NSMutableDictionary dictionary];
+        _daoInstance = [YCForeverDAO sharedInstance];
     }
     return self;
 }
@@ -123,7 +126,7 @@
 
 - (YCForeverMaker * (^)(void))update {
     return ^YCForeverMaker *(void) {
-        [[YCForeverDAO sharedInstance] updateItem:self.item table:self.tableName where:self.whereCondition overrideWhenUpdate:NO];
+        [self.daoInstance updateItem:self.item table:self.tableName where:self.whereCondition overrideWhenUpdate:NO];
         return self;
     };
 }
@@ -133,10 +136,10 @@
         if (self.itemArray) {
             for (NSObject *obj in self.itemArray) {
                 self.item = obj;
-                [[YCForeverDAO sharedInstance] addItem:obj table:self.tableName];
+                [self.daoInstance addItem:obj table:self.tableName];
             }
         } else {
-            [[YCForeverDAO sharedInstance] addItem:self.item table:self.tableName];
+            [self.daoInstance addItem:self.item table:self.tableName];
         }
         return self;
     };
@@ -145,15 +148,15 @@
 - (YCForeverMaker * (^)(void))remove {
     return ^YCForeverMaker *() {
         if (self.itemClass) {
-            [[YCForeverDAO sharedInstance] removeItemClass:self.itemClass table:self.tableName where:self.whereCondition];
+            [self.daoInstance removeItemClass:self.itemClass table:self.tableName where:self.whereCondition];
         } else {
             if (self.itemArray) {
                 for (NSObject *obj in self.itemArray) {
                     self.item = obj;
-                    [[YCForeverDAO sharedInstance] removeItem:self.item table:self.tableName where:self.whereCondition];
+                    [self.daoInstance removeItem:self.item table:self.tableName where:self.whereCondition];
                 }
             } else if (self.item) {
-                [[YCForeverDAO sharedInstance] removeItem:self.item table:self.tableName where:self.whereCondition];
+                [self.daoInstance removeItem:self.item table:self.tableName where:self.whereCondition];
             }
         }
         return self;
@@ -163,7 +166,7 @@
 - (NSArray * (^)(void))load {
     return ^NSArray *() {
         NSParameterAssert(self.item);
-        return [[YCForeverDAO sharedInstance] loadItem:self.item table:self.tableName];
+        return [self.daoInstance loadItem:self.item table:self.tableName];
     };
 }
 
@@ -172,20 +175,36 @@
         NSParameterAssert(self.itemClass);
         NSString *sql = self.sqlMap[@"sql"];
         if (sql) {
-            return [[YCForeverDAO sharedInstance] queryWithSql:sql class:self.itemClass];
+            return [self.daoInstance queryWithSql:sql class:self.itemClass];
         }
-        return [[YCForeverDAO sharedInstance] queryWithTable:self.tableName
-                                                       class:self.itemClass
-                                                       where:self.whereCondition
-                                                       limit:[self.sqlMap[@"limit"] integerValue]
-                                                      offset:[self.sqlMap[@"offset"] integerValue]
-                                                       order:self.sqlMap[@"order"]];
+        return [self.daoInstance queryWithTable:self.tableName
+                                          class:self.itemClass
+                                          where:self.whereCondition
+                                          limit:[self.sqlMap[@"limit"] integerValue]
+                                         offset:[self.sqlMap[@"offset"] integerValue]
+                                          order:self.sqlMap[@"order"]];
     };
 }
 
 - (YCForeverMaker * (^)(void))drop {
     return ^YCForeverMaker *() {
-        [[YCForeverDAO sharedInstance] dropTableWithTable:self.tableName];
+        [self.daoInstance dropTableWithTable:self.tableName];
+        return self;
+    };
+}
+
+- (YCForeverMaker * (^)(void))empty {
+    return ^YCForeverMaker *() {
+        [self.daoInstance emptyTableWithTable:self.tableName];
+        return self;
+    };
+}
+
+- (YCForeverMaker * (^)(NSString *daoKey))dao {
+    return ^YCForeverMaker *(NSString *daoKey) {
+        if (daoKey) {
+            self.daoInstance = [YCForeverDAO instance:daoKey];
+        }
         return self;
     };
 }

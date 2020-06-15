@@ -96,14 +96,14 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _leftView.flowLayout.itemSize = CGSizeMake(_titleColumnWidth, _cellRowHeight);
-    _rightView.flowLayout.itemSize = CGSizeMake(_cellColumnWidth, _cellRowHeight);
-    _leftHeader.flowLayout.itemSize = CGSizeMake(_titleColumnWidth, _titleRowHeight);
-    _rightHeader.flowLayout.itemSize = CGSizeMake(_cellColumnWidth, _titleRowHeight);
     [self reloadUI];
 }
 
 - (void)reloadUI {
+    _leftView.flowLayout.itemSize = CGSizeMake(_titleColumnWidth, _cellRowHeight);
+    _rightView.flowLayout.itemSize = CGSizeMake(_cellColumnWidth, _cellRowHeight);
+    _leftHeader.flowLayout.itemSize = CGSizeMake(_titleColumnWidth, _titleRowHeight);
+    _rightHeader.flowLayout.itemSize = CGSizeMake(_cellColumnWidth, _titleRowHeight);
     __block CGFloat rightWidth = _cellColumnWidth * _columnCount + kYCGridViewExtraOffset; //add a left offset
     NSDictionary *columnTheme = self.extraThemeAttributes[YCGridViewColumnAttributeName];
     [columnTheme enumerateKeysAndObjectsUsingBlock:^(NSNumber *_Nonnull key,
@@ -184,7 +184,7 @@ typedef NS_OPTIONS(NSUInteger, YCGridViewOperation) {
     [self.rightHeader reloadData];
     [self.leftView reloadData];
     [self.rightView reloadData];
-    [self setNeedsDisplay];
+    [self reloadUI];
     if (self.rightView.dataSource[YCCollectionViewSingleSectionKey].count == 0) {
         self.emptyView.frame = self.rightView.bounds;
         self.rightView.collectionView.backgroundView = self.emptyView;
