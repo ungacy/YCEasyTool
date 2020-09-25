@@ -167,6 +167,10 @@ typedef NS_ENUM(NSUInteger, YCPopMenuDirection) {
  */
 @property (nonatomic, assign) BOOL shadow; //default is `YES`
 
+@property (nonatomic, assign) BOOL stickHeader; //default is `NO`
+
+@property (nonatomic, strong) UIView *headerView; //default is nil
+
 /**
  auto dismiss when selected some menu
  */

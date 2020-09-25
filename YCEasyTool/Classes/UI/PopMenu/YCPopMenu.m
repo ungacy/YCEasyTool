@@ -387,7 +387,7 @@ static inline CGRect CGRectOffsetVector(CGRect rect, CGVector vector) {
             height += item.menuHeight;
         }
     }
-    height += self.tableView.tableHeaderView.frame.size.height + self.tableView.tableFooterView.frame.size.height;
+    height += self.tableView.tableHeaderView.frame.size.height + self.tableView.tableFooterView.frame.size.height + self.headerView.frame.size.height;
     if (self.dataArray.count >= self.maxCellCount) {
         _tableView.scrollEnabled = YES;
     }
@@ -419,6 +419,10 @@ static inline CGRect CGRectOffsetVector(CGRect rect, CGVector vector) {
     self.frame = frame;
     [self customUI];
     frame.origin = CGPointZero;
+    if (self.headerView) {
+        [self addSubview:self.headerView];
+        self.tableView.contentInset = UIEdgeInsetsMake(CGRectGetHeight(self.headerView.frame), 0, 0, 0);
+    }
     self.tableView.frame = frame;
 }
 
@@ -426,6 +430,7 @@ static inline CGRect CGRectOffsetVector(CGRect rect, CGVector vector) {
     [self addCover];
     [self setupLayout:point];
     [self.tableView reloadData];
+    [self.tableView setContentOffset:CGPointMake(0, -self.tableView.contentInset.top)];
     self.visible = YES;
     if (self.customViewBlock) {
         self.customViewBlock(self);

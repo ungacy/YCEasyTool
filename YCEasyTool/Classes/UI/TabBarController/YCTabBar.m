@@ -105,7 +105,7 @@
                                   frameSize.height - itemHeight,
                                   self.itemWidth, itemHeight)];
         [item setNeedsDisplay];
-        
+
         index++;
     }
     self.backgroundView.clipsToBounds = NO;
