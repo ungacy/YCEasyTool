@@ -186,6 +186,8 @@ static NSString *const kYCForeverDAODefaultKey = @"com.ungacy.forever";
 
 @property (nonatomic, strong) NSMapTable *daoInstance;
 
+@property (nonatomic, copy) NSString *key;
+
 @end
 
 @implementation YCForeverDAO {
@@ -223,6 +225,7 @@ static NSString *const kYCForeverDAODefaultKey = @"com.ungacy.forever";
         _queue = dispatch_queue_create(label, DISPATCH_QUEUE_CONCURRENT);
         _globalInstances = [NSMutableSet setWithCapacity:0];
         _verbose = YES;
+        _key = key;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_appWillBeTerminated) name:UIApplicationWillTerminateNotification object:nil];
     }
     return self;
@@ -638,6 +641,10 @@ static NSString *const kYCForeverDAODefaultKey = @"com.ungacy.forever";
         Unlock();
         return NO;
     }
+    if (![self _dbOpen]) {
+        Unlock();
+        return NO;
+    }
     BOOL result = [self _dbExecute:sql];
     if (result) {
         [_globalInstances removeObject:table];
@@ -650,6 +657,10 @@ static NSString *const kYCForeverDAODefaultKey = @"com.ungacy.forever";
     Lock();
     NSString *sql = [YCForeverSqlHelper emptySqlWithTable:table];
     if (!sql) {
+        Unlock();
+        return NO;
+    }
+    if (![self _dbOpen]) {
         Unlock();
         return NO;
     }

@@ -21,6 +21,8 @@
 
 @property (nonatomic, assign) BOOL verbose; ///< Set `YES` to enable error logs for debug.
 
+@property (nonatomic,copy, readonly) NSString *key;
+
 - (BOOL)addItem:(id)item table:(NSString *)table;
 
 - (BOOL)updateItem:(id)item table:(NSString *)table where:(id)where overrideWhenUpdate:(BOOL)overrideWhenUpdate;
