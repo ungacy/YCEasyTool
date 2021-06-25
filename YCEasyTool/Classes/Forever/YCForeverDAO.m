@@ -366,7 +366,7 @@ static NSString *const kYCForeverDAODefaultKey = @"com.ungacy.forever";
     return YES;
 }
 
-    - (BOOL)_dbSetItemFromStmt : (sqlite3_stmt *)stmt item : (NSObject<YCForeverItemProtocol> *)item {
+- (BOOL)_dbSetItemFromStmt:(sqlite3_stmt *)stmt item:(NSObject<YCForeverItemProtocol> *)item {
     NSArray *propertyArray = [item yc_propertyArray];
     for (NSUInteger idx = 0; idx < propertyArray.count; idx++) {
         YCProperty *obj = propertyArray[idx];

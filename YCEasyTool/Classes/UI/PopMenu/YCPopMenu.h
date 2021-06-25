@@ -117,7 +117,6 @@ typedef NS_ENUM(NSUInteger, YCPopMenuDirection) {
  */
 @property (nonatomic, assign) CGFloat animationDuration; // default is 0.3
 
-
 /**
  + (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_AVAILABLE_IOS(7_0);
  */

@@ -18,31 +18,31 @@
  Type encoding's type.
  */
 typedef NS_OPTIONS(NSUInteger, YCEncodingType) {
-    YCEncodingTypeMask = 0xFF, ///< mask of type value
-    YCEncodingTypeUnknown = 0, ///< unknown
-    YCEncodingTypeVoid = 1, ///< void
-    YCEncodingTypeBool = 2, ///< bool
-    YCEncodingTypeInt8 = 3, ///< char / BOOL
-    YCEncodingTypeUInt8 = 4, ///< unsigned char
-    YCEncodingTypeInt16 = 5, ///< short
-    YCEncodingTypeUInt16 = 6, ///< unsigned short
-    YCEncodingTypeInt32 = 7, ///< int
-    YCEncodingTypeUInt32 = 8, ///< unsigned int
-    YCEncodingTypeInt64 = 9, ///< long long
-    YCEncodingTypeUInt64 = 10, ///< unsigned long long
-    YCEncodingTypeFloat = 11, ///< float
-    YCEncodingTypeDouble = 12, ///< double
+    YCEncodingTypeMask = 0xFF,     ///< mask of type value
+    YCEncodingTypeUnknown = 0,     ///< unknown
+    YCEncodingTypeVoid = 1,        ///< void
+    YCEncodingTypeBool = 2,        ///< bool
+    YCEncodingTypeInt8 = 3,        ///< char / BOOL
+    YCEncodingTypeUInt8 = 4,       ///< unsigned char
+    YCEncodingTypeInt16 = 5,       ///< short
+    YCEncodingTypeUInt16 = 6,      ///< unsigned short
+    YCEncodingTypeInt32 = 7,       ///< int
+    YCEncodingTypeUInt32 = 8,      ///< unsigned int
+    YCEncodingTypeInt64 = 9,       ///< long long
+    YCEncodingTypeUInt64 = 10,     ///< unsigned long long
+    YCEncodingTypeFloat = 11,      ///< float
+    YCEncodingTypeDouble = 12,     ///< double
     YCEncodingTypeLongDouble = 13, ///< long double
-    YCEncodingTypeObject = 14, ///< id
-    YCEncodingTypeClass = 15, ///< Class
-    YCEncodingTypeSEL = 16, ///< SEL
-    YCEncodingTypeBlock = 17, ///< block
-    YCEncodingTypePointer = 18, ///< void*
-    YCEncodingTypeStruct = 19, ///< struct
-    YCEncodingTypeUnion = 20, ///< union
-    YCEncodingTypeCString = 21, ///< char*
-    YCEncodingTypeCArray = 22, ///< char[10] (for example)
-    YCEncodingTypeString = 23, ///< NSString
+    YCEncodingTypeObject = 14,     ///< id
+    YCEncodingTypeClass = 15,      ///< Class
+    YCEncodingTypeSEL = 16,        ///< SEL
+    YCEncodingTypeBlock = 17,      ///< block
+    YCEncodingTypePointer = 18,    ///< void*
+    YCEncodingTypeStruct = 19,     ///< struct
+    YCEncodingTypeUnion = 20,      ///< union
+    YCEncodingTypeCString = 21,    ///< char*
+    YCEncodingTypeCArray = 22,     ///< char[10] (for example)
+    YCEncodingTypeString = 23,     ///< NSString
 };
 
 typedef NS_ENUM(NSUInteger, YCPropertyParsingType) {

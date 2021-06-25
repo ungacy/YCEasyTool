@@ -125,8 +125,8 @@ static inline id ModelCreateNumberFromProperty(__unsafe_unretained id model,
     return sql;
 }
 
-    + (NSString *)insertSqlWithItem : (NSObject<YCForeverItemProtocol> *)item
-                                      table : (NSString *)table {
++ (NSString *)insertSqlWithItem:(NSObject<YCForeverItemProtocol> *)item
+                          table:(NSString *)table {
     if (!table) {
         return nil;
     }
@@ -351,7 +351,7 @@ static inline id ModelCreateNumberFromProperty(__unsafe_unretained id model,
     return sql;
 }
 
-    + (NSString *)dropSqlWithTable : (NSString *)table {
++ (NSString *)dropSqlWithTable:(NSString *)table {
     if (!table) {
         return nil;
     }
