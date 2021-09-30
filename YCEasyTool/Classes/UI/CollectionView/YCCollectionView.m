@@ -23,7 +23,7 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         _section = @[YCCollectionViewSingleSectionKey];
-        _dataSource = [@{ YCCollectionViewSingleSectionKey: @[] } mutableCopy];
+        _dataSource = [@{YCCollectionViewSingleSectionKey: @[]} mutableCopy];
         _flowLayout = layout;
     }
     return self;

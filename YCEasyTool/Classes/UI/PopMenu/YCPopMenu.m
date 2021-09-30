@@ -227,10 +227,12 @@ const NSUInteger YCPopMenuNoSelectionIndex = NSNotFound;
             self.cover.alpha = 1;
             [self.arrow removeFromSuperview];
         }
-        [UIView animateWithDuration:self.animationDuration delay:0
-             usingSpringWithDamping:_damping
-              initialSpringVelocity:_initialSpringVelocity
-                            options:_options animations:^{
+        [UIView animateWithDuration:self.animationDuration
+            delay:0
+            usingSpringWithDamping:_damping
+            initialSpringVelocity:_initialSpringVelocity
+            options:_options
+            animations:^{
                 if (self.visible) {
                     self.frame = oldFrame;
                     oldFrame.origin = CGPointZero;
