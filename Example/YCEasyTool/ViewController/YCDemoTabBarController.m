@@ -12,6 +12,7 @@
 #import "YCMenuCell.h"
 #import "YCPopMenu.h"
 #import "YCTabBarItem.h"
+#import "NSArray+YCTools.h"
 
 @interface YCDemoTabBarController () <YCTabBarControllerDelegate>
 
@@ -33,7 +34,7 @@
 }
 
 - (void)setup {
-    NSArray *titles = @[@"TreeMenu", @"Tab0", @"Tab1", @"Tab2", @"More0", @"More1", @"More2"];
+    NSArray<NSString *> *titles = @[@"TreeMenu", @"Tab0", @"Tab1", @"Tab2", @"More0", @"More1", @"More2"];
     NSMutableArray *children = [NSMutableArray arrayWithCapacity:0];
     self.maxCount = 5;
     {
@@ -44,13 +45,21 @@
         [children addObject:navigationController];
     }
 
-    for (NSUInteger index = 1; index < [titles count]; index++) {
+    titles.yc_forEach(^(NSUInteger idx, NSString *obj) {
         YCChildViewController *viewController = [[YCChildViewController alloc] init];
-        viewController.title = titles[index];
+        viewController.title = obj;
         UIViewController *navigationController = [[UINavigationController alloc]
-            initWithRootViewController:viewController];
+                                                  initWithRootViewController:viewController];
         [children addObject:navigationController];
-    }
+    });
+    children = titles.yc_map(^id(NSUInteger idx, NSString * obj) {
+        YCChildViewController *viewController = [[YCChildViewController alloc] init];
+        viewController.title = obj;
+        UIViewController *navigationController = [[UINavigationController alloc]
+                                                  initWithRootViewController:viewController];
+        return navigationController;
+    });
+    
     [self setViewControllers:children];
     self.titles = titles;
 }

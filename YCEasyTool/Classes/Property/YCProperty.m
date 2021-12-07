@@ -129,7 +129,7 @@ static inline NSArray *YCGetPropertyList(Class someClass, YCPropertyParsingType 
 
 @interface YCProperty ()
 
-@property (nonatomic, assign) objc_property_t property;
+@property (nonatomic, assign) objc_property_t property ;
 
 @end
 

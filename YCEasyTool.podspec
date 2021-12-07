@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YCEasyTool'
-  s.version          = '0.2.31'
+  s.version          = '0.2.32'
   s.summary          = 'A set of tools.'
 
   s.description      = <<-DESC
@@ -17,6 +17,10 @@ Pod::Spec.new do |s|
 ## Utils
 
 - Polling
+
+- EventNotifier
+
+- CollectionTools
 
 ## Runtime
 
@@ -53,9 +57,15 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'YCEasyTool/Classes/PollingEntity/*.h'
   end
   
-  s.subspec 'Tools' do |ss|
-    ss.source_files = 'YCEasyTool/Classes/Tools/*'
-    ss.public_header_files = 'YCEasyTool/Classes/Tools/*.h'
+  s.subspec 'EventNotifier' do |ss|
+      ss.dependency 'YCEasyTool/Property'
+      ss.source_files = 'YCEasyTool/Classes/EventNotifier/*'
+      ss.public_header_files = 'YCEasyTool/Classes/EventNotifier/*.h'
+  end
+  
+  s.subspec 'CollectionTools' do |ss|
+    ss.source_files = 'YCEasyTool/Classes/CollectionTools/*'
+    ss.public_header_files = 'YCEasyTool/Classes/CollectionTools/*.h'
   end
   
   s.subspec 'Property' do |ss|
@@ -73,34 +83,34 @@ Pod::Spec.new do |s|
   s.subspec 'UI' do |ui|
     ui.subspec 'TreeMenu' do |ss|
       ss.source_files = 'YCEasyTool/Classes/UI/TreeMenu/*'
-        ss.public_header_files = 'YCEasyTool/Classes/UI/TreeMenu/*.h'
+      ss.public_header_files = 'YCEasyTool/Classes/UI/TreeMenu/*.h'
     end
   
     ui.subspec 'Segment' do |ss|
       ss.source_files = 'YCEasyTool/Classes/UI/Segment/*'
-        ss.public_header_files = 'YCEasyTool/Classes/UI/Segment/*.h'
+      ss.public_header_files = 'YCEasyTool/Classes/UI/Segment/*.h'
     end
   
     ui.subspec 'TabBarController' do |ss|
       ss.source_files = 'YCEasyTool/Classes/UI/TabBarController/*'
-        ss.public_header_files = 'YCEasyTool/Classes/UI/TabBarController/*.h'
+      ss.public_header_files = 'YCEasyTool/Classes/UI/TabBarController/*.h'
     end
   
     ui.subspec 'PopMenu' do |ss|
       ss.source_files = 'YCEasyTool/Classes/UI/PopMenu/*'
-        ss.public_header_files = 'YCEasyTool/Classes/UI/PopMenu/*.h'
+      ss.public_header_files = 'YCEasyTool/Classes/UI/PopMenu/*.h'
     end
     
     ui.subspec 'CollectionView' do |ss|
       ss.source_files = 'YCEasyTool/Classes/UI/CollectionView/*'
-        ss.public_header_files = 'YCEasyTool/Classes/UI/CollectionView/*.h'
+      ss.public_header_files = 'YCEasyTool/Classes/UI/CollectionView/*.h'
     end
     
     ui.subspec 'Grid' do |ss|
       ss.source_files = 'YCEasyTool/Classes/UI/Grid/*'
-        ss.public_header_files = 'YCEasyTool/Classes/UI/Grid/*.h'
+      ss.public_header_files = 'YCEasyTool/Classes/UI/Grid/*.h'
       ss.dependency 'YCEasyTool/UI/CollectionView'
-      ss.dependency 'YCEasyTool/Tools'
+      ss.dependency 'YCEasyTool/CollectionTools'
     end
     
   end

@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "NSArray+YCTools.h"
+#import "YCEventNotifier.h"
 #import "NSObject+YCForeverMaker.h"
 #import "YCForever.h"
 #import "YCForeverDAO.h"
@@ -18,7 +20,6 @@
 #import "YCPollingEntity.h"
 #import "YCMemeryCache.h"
 #import "YCProperty.h"
-#import "NSArray+YCTools.h"
 #import "YCCollectionView.h"
 #import "YCCollectionViewDefine.h"
 #import "YCGridView.h"

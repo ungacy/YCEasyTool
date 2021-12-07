@@ -1,6 +1,6 @@
 {
   "name": "YCEasyTool",
-  "version": "0.2.20",
+  "version": "0.2.31",
   "summary": "A set of tools.",
   "description": "# A set of tools.\n\n## Utils\n\n- Polling\n\n## Runtime\n\n- Property\n\n## Persistence\n\n- Forever\n\n## UI\n\n- TreeMenu\n\n- Segment\n\n- PopMenu\n\n- TabBarController\n\n- GridView",
   "homepage": "https://github.com/ungacy/YCEasyTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ungacy/YCEasyTool.git",
-    "tag": "0.2.20"
+    "tag": "0.2.31"
   },
   "social_media_url": "https://twitter.com/ungacy",
   "platforms": {
@@ -26,9 +26,14 @@
       "public_header_files": "YCEasyTool/Classes/PollingEntity/*.h"
     },
     {
-      "name": "Tools",
-      "source_files": "YCEasyTool/Classes/Tools/*",
-      "public_header_files": "YCEasyTool/Classes/Tools/*.h"
+      "name": "EventNotifier",
+      "source_files": "YCEasyTool/Classes/EventNotifier/*",
+      "public_header_files": "YCEasyTool/Classes/EventNotifier/*.h"
+    },
+    {
+      "name": "CollectionTools",
+      "source_files": "YCEasyTool/Classes/CollectionTools/*",
+      "public_header_files": "YCEasyTool/Classes/CollectionTools/*.h"
     },
     {
       "name": "Property",
@@ -85,7 +90,7 @@
             "YCEasyTool/UI/CollectionView": [
 
             ],
-            "YCEasyTool/Tools": [
+            "YCEasyTool/CollectionTools": [
 
             ]
           }

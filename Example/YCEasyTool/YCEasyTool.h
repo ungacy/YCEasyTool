@@ -19,6 +19,7 @@ FOUNDATION_EXPORT const unsigned char YCEasyToolVersionString[];
 #import "YCForever.h"
 #import "YCPollingEntity.h"
 #import "YCProperty.h"
+#import "YCEventNotifier.h"
 #import "NSArray+YCTools.h"
 #import "YCCollectionView.h"
 #import "YCGridView.h"
@@ -26,4 +27,6 @@ FOUNDATION_EXPORT const unsigned char YCEasyToolVersionString[];
 #import "YCSegmentedControl.h"
 #import "YCTabBarController.h"
 #import "YCTreeMenuView.h"
-
+#import "YCForeverDAO.h"
+#import "YCForeverSqlHelper.h"
+#import "YCMemeryCache.h"

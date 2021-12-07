@@ -1,30 +1,32 @@
 PODS:
-  - YCEasyTool (0.2.20):
-    - YCEasyTool/Forever (= 0.2.20)
-    - YCEasyTool/Polling (= 0.2.20)
-    - YCEasyTool/Property (= 0.2.20)
-    - YCEasyTool/Tools (= 0.2.20)
-    - YCEasyTool/UI (= 0.2.20)
-  - YCEasyTool/Forever (0.2.20):
+  - YCEasyTool (0.2.31):
+    - YCEasyTool/CollectionTools (= 0.2.31)
+    - YCEasyTool/EventNotifier (= 0.2.31)
+    - YCEasyTool/Forever (= 0.2.31)
+    - YCEasyTool/Polling (= 0.2.31)
+    - YCEasyTool/Property (= 0.2.31)
+    - YCEasyTool/UI (= 0.2.31)
+  - YCEasyTool/CollectionTools (0.2.31)
+  - YCEasyTool/EventNotifier (0.2.31)
+  - YCEasyTool/Forever (0.2.31):
     - YCEasyTool/Property
-  - YCEasyTool/Polling (0.2.20)
-  - YCEasyTool/Property (0.2.20)
-  - YCEasyTool/Tools (0.2.20)
-  - YCEasyTool/UI (0.2.20):
-    - YCEasyTool/UI/CollectionView (= 0.2.20)
-    - YCEasyTool/UI/Grid (= 0.2.20)
-    - YCEasyTool/UI/PopMenu (= 0.2.20)
-    - YCEasyTool/UI/Segment (= 0.2.20)
-    - YCEasyTool/UI/TabBarController (= 0.2.20)
-    - YCEasyTool/UI/TreeMenu (= 0.2.20)
-  - YCEasyTool/UI/CollectionView (0.2.20)
-  - YCEasyTool/UI/Grid (0.2.20):
-    - YCEasyTool/Tools
+  - YCEasyTool/Polling (0.2.31)
+  - YCEasyTool/Property (0.2.31)
+  - YCEasyTool/UI (0.2.31):
+    - YCEasyTool/UI/CollectionView (= 0.2.31)
+    - YCEasyTool/UI/Grid (= 0.2.31)
+    - YCEasyTool/UI/PopMenu (= 0.2.31)
+    - YCEasyTool/UI/Segment (= 0.2.31)
+    - YCEasyTool/UI/TabBarController (= 0.2.31)
+    - YCEasyTool/UI/TreeMenu (= 0.2.31)
+  - YCEasyTool/UI/CollectionView (0.2.31)
+  - YCEasyTool/UI/Grid (0.2.31):
+    - YCEasyTool/CollectionTools
     - YCEasyTool/UI/CollectionView
-  - YCEasyTool/UI/PopMenu (0.2.20)
-  - YCEasyTool/UI/Segment (0.2.20)
-  - YCEasyTool/UI/TabBarController (0.2.20)
-  - YCEasyTool/UI/TreeMenu (0.2.20)
+  - YCEasyTool/UI/PopMenu (0.2.31)
+  - YCEasyTool/UI/Segment (0.2.31)
+  - YCEasyTool/UI/TabBarController (0.2.31)
+  - YCEasyTool/UI/TreeMenu (0.2.31)
 
 DEPENDENCIES:
   - YCEasyTool (from `../`)
@@ -34,8 +36,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YCEasyTool: 8e06218c12da4f3c9f507144c97c7bfaab8797c6
+  YCEasyTool: bd686f12f53859b9b5982a9f97304dd528a18b30
 
 PODFILE CHECKSUM: 39f58180880e97a194fdb7c4658255fd08dd5b16
 
-COCOAPODS: 1.7.0
+COCOAPODS: 1.10.1

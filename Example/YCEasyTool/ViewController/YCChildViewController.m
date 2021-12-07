@@ -27,7 +27,7 @@
         label.text = self.title;
         label;
     });
-    NSMutableArray *rowArray = [NSMutableArray array];
+    NSMutableArray<NSArray *> *rowArray = [NSMutableArray array];
     NSMutableArray *columnTitleArray = [NSMutableArray array];
     NSUInteger columnCount = 10;
     NSUInteger rowCount = 30;

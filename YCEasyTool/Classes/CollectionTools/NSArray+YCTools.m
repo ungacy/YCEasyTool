@@ -14,6 +14,9 @@ typedef BOOL (^YCToolsSelectBlock)(NSUInteger index, id origin);
 
 @implementation NSArray (YCTools)
 
+@dynamic yc_forEach;
+@dynamic yc_map;
+
 - (void)yc_each:(void(NS_NOESCAPE ^)(id origin))block {
     if (!block) {
         return;
@@ -86,6 +89,36 @@ typedef BOOL (^YCToolsSelectBlock)(NSUInteger index, id origin);
 
 - (NSArray *)yc_reverse {
     return [[self reverseObjectEnumerator] allObjects];
+}
+
+- (NSArray * (^)(void (^)(NSUInteger, id)))forEach {
+    return ^(void (^block)(NSUInteger idx, id obj)) {
+        [self enumerateObjectsUsingBlock:^(id _Nonnull obj,
+                                           NSUInteger idx,
+                                           BOOL *_Nonnull stop) {
+            if (block) {
+                block(idx, obj);
+            }
+        }];
+        return self;
+    };
+}
+
+- (NSMutableArray * (^)(id (^)(NSUInteger, id)))yc_map {
+    return ^(id (^block)(NSUInteger idx, id obj)) {
+        NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
+        [self enumerateObjectsUsingBlock:^(id _Nonnull obj,
+                                           NSUInteger idx,
+                                           BOOL *_Nonnull stop) {
+            if (block) {
+                id some = block(idx, obj);
+                if (some) {
+                    [result addObject:some];
+                }
+            }
+        }];
+        return result;
+    };
 }
 
 @end

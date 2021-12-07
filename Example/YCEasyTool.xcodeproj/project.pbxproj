@@ -12,6 +12,8 @@
 		345362D81E518B3F00E404EE /* YCMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 345362D71E518B3F00E404EE /* YCMenuCell.m */; };
 		345B53091E49C55B008D4C0D /* YCDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345B53081E49C55B008D4C0D /* YCDemoViewController.m */; };
 		345B530E1E49C590008D4C0D /* YCDemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345B530D1E49C590008D4C0D /* YCDemoModel.m */; };
+		34685F88275A13D0005CBF2D /* YCEventNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 34685F86275A13D0005CBF2D /* YCEventNotifier.m */; };
+		34685F89275A13D0005CBF2D /* YCEventNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 34685F87275A13D0005CBF2D /* YCEventNotifier.h */; };
 		34B6E1161E5BFAB2002F02AC /* YCDemoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B6E1151E5BFAB2002F02AC /* YCDemoTabBarController.m */; };
 		34B6E1191E5BFBD8002F02AC /* YCChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B6E1181E5BFBD8002F02AC /* YCChildViewController.m */; };
 		34EE708D2074F9EB0040A0CA /* YCEasyTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 34EE708B2074F9EB0040A0CA /* YCEasyTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -102,6 +104,8 @@
 		345B53081E49C55B008D4C0D /* YCDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDemoViewController.m; sourceTree = "<group>"; };
 		345B530C1E49C590008D4C0D /* YCDemoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDemoModel.h; sourceTree = "<group>"; };
 		345B530D1E49C590008D4C0D /* YCDemoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDemoModel.m; sourceTree = "<group>"; };
+		34685F86275A13D0005CBF2D /* YCEventNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCEventNotifier.m; sourceTree = "<group>"; };
+		34685F87275A13D0005CBF2D /* YCEventNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCEventNotifier.h; sourceTree = "<group>"; };
 		34B6E1141E5BFAB2002F02AC /* YCDemoTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDemoTabBarController.h; sourceTree = "<group>"; };
 		34B6E1151E5BFAB2002F02AC /* YCDemoTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDemoTabBarController.m; sourceTree = "<group>"; };
 		34B6E1171E5BFBD8002F02AC /* YCChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCChildViewController.h; sourceTree = "<group>"; };
@@ -239,6 +243,15 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
+		34685F85275A13D0005CBF2D /* EventNotifier */ = {
+			isa = PBXGroup;
+			children = (
+				34685F87275A13D0005CBF2D /* YCEventNotifier.h */,
+				34685F86275A13D0005CBF2D /* YCEventNotifier.m */,
+			);
+			path = EventNotifier;
+			sourceTree = "<group>";
+		};
 		34EE708A2074F9EB0040A0CA /* YCEasyTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,10 +265,11 @@
 		34EE70962074FA290040A0CA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				34685F85275A13D0005CBF2D /* EventNotifier */,
 				34EE70C02074FA290040A0CA /* Forever */,
 				34EE70BD2074FA290040A0CA /* PollingEntity */,
 				34EE70B82074FA290040A0CA /* Property */,
-				34EE70B52074FA290040A0CA /* Tools */,
+				34EE70B52074FA290040A0CA /* CollectionTools */,
 				34EE70972074FA290040A0CA /* UI */,
 			);
 			name = Classes;
@@ -340,13 +354,13 @@
 			path = Grid;
 			sourceTree = "<group>";
 		};
-		34EE70B52074FA290040A0CA /* Tools */ = {
+		34EE70B52074FA290040A0CA /* CollectionTools */ = {
 			isa = PBXGroup;
 			children = (
 				34EE70B62074FA290040A0CA /* NSArray+YCTools.h */,
 				34EE70B72074FA290040A0CA /* NSArray+YCTools.m */,
 			);
-			path = Tools;
+			path = CollectionTools;
 			sourceTree = "<group>";
 		};
 		34EE70B82074FA290040A0CA /* Property */ = {
@@ -478,6 +492,7 @@
 				34EE70EF2074FA290040A0CA /* YCForeverSqlHelper.h in Headers */,
 				34EE70D52074FA290040A0CA /* YCTreeMenuView.h in Headers */,
 				34EE70E42074FA290040A0CA /* YCProperty.h in Headers */,
+				34685F89275A13D0005CBF2D /* YCEventNotifier.h in Headers */,
 				34EE70D02074FA290040A0CA /* YCSegmentItem.h in Headers */,
 				34EE70E92074FA290040A0CA /* YCForever.h in Headers */,
 				34EE70E12074FA290040A0CA /* NSArray+YCTools.h in Headers */,
@@ -527,8 +542,8 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				242A8DC21E36A1612EC09DE2 /* [CP] Embed Pods Frameworks */,
 				34EE70952074F9EC0040A0CA /* Embed Frameworks */,
+				3817A33C2BFE1D23367F9039 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -599,7 +614,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		242A8DC21E36A1612EC09DE2 /* [CP] Embed Pods Frameworks */ = {
+		3817A33C2BFE1D23367F9039 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -648,6 +663,7 @@
 				34EE70D22074FA290040A0CA /* YCSegmentItem.m in Sources */,
 				34EE70F12074FA290040A0CA /* YCForeverDAO.m in Sources */,
 				34EE70ED2074FA290040A0CA /* YCForever.m in Sources */,
+				34685F88275A13D0005CBF2D /* YCEventNotifier.m in Sources */,
 				34EE70EB2074FA290040A0CA /* YCForeverSqlHelper.m in Sources */,
 				34EE70DC2074FA290040A0CA /* YCGridViewCell.m in Sources */,
 				34EE70D82074FA290040A0CA /* YCTabBar.m in Sources */,
